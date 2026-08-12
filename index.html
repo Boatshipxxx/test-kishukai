@@ -5,326 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="輝蹴会（きしゅうかい）は、世界とつながり、豊かな人間性を育むテコンドーアカデミー。蹴り出す一歩が、世界へつながる。情ではじまるテコンドー。">
 <title>輝蹴会</title>
-<style>
-:root{
-  --bg:#FBFBF8;
-  --card:#FFFFFF;
-  --ink:#172038;
-  --muted:#5A6378;
-  --line:#E4E3DA;
-  --red:#C8373B;
-  --blue:#2456A6;
-  --gold:#D9A441;
-  --navy:#101A33;
-  --navy-ink:#EDEFF4;
-  --navy-muted:#A7B0C4;
-  --navy-line:#2A3552;
-  --shadow:0 10px 30px rgba(23,32,56,.08);
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0E1526;
-    --card:#161F38;
-    --ink:#ECEEF2;
-    --muted:#9AA3B8;
-    --line:#273250;
-    --red:#E05A55;
-    --blue:#6C9BE8;
-    --gold:#E2B45C;
-    --navy:#0A1122;
-    --navy-line:#232E4A;
-    --shadow:0 10px 30px rgba(0,0,0,.35);
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0E1526;
-  --card:#161F38;
-  --ink:#ECEEF2;
-  --muted:#9AA3B8;
-  --line:#273250;
-  --red:#E05A55;
-  --blue:#6C9BE8;
-  --gold:#E2B45C;
-  --navy:#0A1122;
-  --navy-line:#232E4A;
-  --shadow:0 10px 30px rgba(0,0,0,.35);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none !important;transition:none !important}
-}
-body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Noto Sans JP",-apple-system,sans-serif;
-  line-height:1.9;
-  font-size:16px;
-  -webkit-font-smoothing:antialiased;
-}
-h1,h2,h3,.serif{
-  font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
-  font-weight:600;
-  line-height:1.5;
-  text-wrap:balance;
-}
-img,svg{max-width:100%}
-a{color:inherit}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-.eyebrow{
-  font-family:-apple-system,"Helvetica Neue",sans-serif;
-  font-size:12px;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--red);font-weight:700;
-}
-.section{padding:88px 0}
-.section-head{max-width:640px;margin-bottom:48px}
-.section-head h2{font-size:clamp(26px,4vw,36px);margin-top:10px}
-.section-head p{color:var(--muted);margin-top:14px}
-.btn{
-  display:inline-block;text-decoration:none;font-weight:700;
-  padding:14px 32px;border-radius:999px;letter-spacing:.06em;
-  transition:transform .15s ease,opacity .15s ease;
-}
-.btn:hover{transform:translateY(-2px);opacity:.92}
-.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-.btn-primary{background:var(--red);color:#fff}
-.btn-ghost{border:1.5px solid currentColor;color:inherit}
-.btn-gold{background:var(--gold);color:#231A05}
-
-/* header */
-header.site{
-  position:sticky;top:0;z-index:50;
-  background:color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.nav{display:flex;align-items:center;gap:28px;height:68px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700}
-.brand .mark{width:30px;height:30px;flex:none}
-.brand .name{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:20px;letter-spacing:.12em}
-.brand .sub{font-size:10px;letter-spacing:.22em;color:var(--muted);display:block;line-height:1}
-.nav ul{display:flex;gap:22px;list-style:none;margin-left:auto}
-.nav ul a{text-decoration:none;font-size:14px;font-weight:600;color:var(--muted)}
-.nav ul a:hover{color:var(--ink)}
-.nav .btn{padding:10px 22px;font-size:14px}
-@media (max-width:900px){
-  .nav ul{display:none}
-  .nav{justify-content:space-between}
-}
-@media (max-width:520px){
-  .brand .sub{display:none}
-  .nav{gap:12px}
-}
-
-/* hero */
-.hero{
-  background:
-    radial-gradient(900px 500px at 85% -10%, rgba(36,86,166,.35), transparent 60%),
-    radial-gradient(700px 480px at -10% 110%, rgba(200,55,59,.30), transparent 60%),
-    var(--navy);
-  color:var(--navy-ink);
-  position:relative;overflow:hidden;
-}
-.hero .wrap{
-  display:grid;grid-template-columns:1fr auto;gap:40px;
-  padding-top:96px;padding-bottom:96px;align-items:center;position:relative;
-}
-.hero .arc{position:absolute;inset:0;pointer-events:none;opacity:.5}
-.hero-copy{position:relative;animation:rise .9s ease both}
-@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.hero .eyebrow{color:var(--gold)}
-.hero h1{
-  font-size:clamp(34px,5.6vw,58px);color:#fff;margin:18px 0 22px;
-}
-.hero h1 .accent{color:var(--gold)}
-.hero p.lead{max-width:34em;color:var(--navy-muted);font-size:17px}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
-.hero-badges span{
-  font-size:12.5px;font-weight:700;letter-spacing:.05em;
-  border:1px solid var(--navy-line);border-radius:999px;padding:6px 14px;
-  color:var(--navy-muted);background:rgba(255,255,255,.04);
-}
-.tate{
-  writing-mode:vertical-rl;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
-  font-size:clamp(18px,2vw,24px);letter-spacing:.34em;color:var(--gold);
-  border-right:1px solid var(--navy-line);padding-right:22px;height:auto;
-  align-self:center;
-}
-@media (max-width:760px){
-  .hero .wrap{grid-template-columns:1fr}
-  .tate{writing-mode:horizontal-tb;border-right:0;border-top:1px solid var(--navy-line);padding:18px 0 0;height:auto;letter-spacing:.2em}
-}
-
-/* promise cards */
-.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-@media (max-width:860px){.cards3{grid-template-columns:1fr}}
-.card{
-  background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:30px 28px;box-shadow:var(--shadow);
-}
-.card .kanji{
-  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
-  font-size:38px;line-height:1;color:var(--blue);
-}
-.card:nth-child(2) .kanji{color:var(--red)}
-.card:nth-child(3) .kanji{color:var(--gold)}
-.card h3{font-size:19px;margin:16px 0 10px}
-.card p{font-size:14.5px;color:var(--muted)}
-
-/* world section */
-.world{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.world-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
-@media (max-width:860px){.world-grid{grid-template-columns:1fr}}
-.photo{
-  border-radius:14px;position:relative;overflow:hidden;aspect-ratio:4/3;
-  display:flex;align-items:flex-end;color:#fff;
-}
-.photo .tag{
-  font-size:11.5px;letter-spacing:.14em;padding:8px 14px;
-  background:rgba(10,17,34,.62);width:100%;
-}
-.ph-a{background:linear-gradient(135deg,#2456A6 0%,#101A33 70%)}
-.ph-b{background:linear-gradient(135deg,#C8373B 0%,#5f1417 75%)}
-.ph-c{background:linear-gradient(135deg,#D9A441 0%,#7a531a 75%)}
-.photo::after{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(340px 200px at 70% 30%, rgba(255,255,255,.22), transparent 65%);
-}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
-@media (max-width:640px){.gallery{grid-template-columns:1fr}}
-.gallery .photo{aspect-ratio:1/1}
-.world-copy .quote{
-  border-left:3px solid var(--gold);padding:6px 0 6px 20px;margin:24px 0;
-  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:17px;
-}
-.world-copy p{color:var(--muted);font-size:15px}
-
-/* spirit */
-.spirit-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
-@media (max-width:860px){.spirit-grid{grid-template-columns:repeat(2,1fr)}}
-.spirit{
-  background:var(--card);border:1px solid var(--line);border-radius:12px;
-  text-align:center;padding:26px 10px;
-}
-.spirit .k{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:26px;letter-spacing:.14em}
-.spirit .r{font-size:11px;letter-spacing:.18em;color:var(--muted);display:block;margin-top:8px;text-transform:uppercase}
-.jung{
-  margin-top:36px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;
-  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px;box-shadow:var(--shadow);
-}
-@media (max-width:640px){.jung{grid-template-columns:1fr}}
-.jung .glyph{
-  width:86px;height:86px;border-radius:50%;flex:none;
-  display:flex;align-items:center;justify-content:center;
-  background:conic-gradient(from 180deg, var(--red) 0 50%, var(--blue) 50% 100%);
-  color:#fff;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:34px;
-}
-.jung p{color:var(--muted);font-size:15px}
-
-/* programs */
-.prog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-@media (max-width:760px){.prog-grid{grid-template-columns:1fr}}
-.prog{
-  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 26px 24px;
-  display:flex;flex-direction:column;gap:8px;
-}
-.prog .level{font-size:11px;letter-spacing:.2em;font-weight:700;color:var(--blue);text-transform:uppercase}
-.prog h3{font-size:18px}
-.prog .who{font-size:13px;color:var(--gold);font-weight:700}
-.prog p{font-size:14px;color:var(--muted)}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
-@media (max-width:860px){.plans{grid-template-columns:1fr}}
-.plan{
-  border:1px solid var(--line);border-radius:14px;padding:30px 26px;background:var(--card);
-  display:flex;flex-direction:column;gap:10px;text-align:center;
-}
-.plan.featured{border:2px solid var(--red);position:relative}
-.plan.featured .flag{
-  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
-  background:var(--red);color:#fff;font-size:11.5px;font-weight:700;
-  letter-spacing:.12em;border-radius:999px;padding:3px 16px;white-space:nowrap;
-}
-.plan h3{font-size:17px}
-.plan .price{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:30px;font-variant-numeric:tabular-nums}
-.plan .price small{font-size:13px;color:var(--muted);font-family:inherit}
-.plan p{font-size:13.5px;color:var(--muted)}
-.note{font-size:12.5px;color:var(--muted);margin-top:18px}
-
-/* faq */
-.faq details{
-  background:var(--card);border:1px solid var(--line);border-radius:12px;
-  padding:0;margin-bottom:12px;overflow:hidden;
-}
-.faq summary{
-  cursor:pointer;font-weight:700;padding:18px 22px;list-style:none;position:relative;
-}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"＋";position:absolute;right:20px;color:var(--red)}
-.faq details[open] summary::after{content:"－"}
-.faq summary:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
-.faq .a{padding:0 22px 20px;color:var(--muted);font-size:14.5px}
-
-/* news */
-.news li{
-  list-style:none;display:grid;grid-template-columns:110px 92px 1fr;gap:18px;
-  padding:18px 4px;border-bottom:1px solid var(--line);align-items:baseline;
-}
-@media (max-width:640px){.news li{grid-template-columns:1fr}}
-.news time{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
-.news .cat{
-  font-size:11px;font-weight:700;letter-spacing:.1em;text-align:center;
-  border:1px solid var(--blue);color:var(--blue);border-radius:999px;padding:2px 10px;
-}
-.news .cat.red{border-color:var(--red);color:var(--red)}
-.news a{text-decoration:none;font-size:15px}
-.news a:hover{text-decoration:underline}
-
-/* supporter */
-.supporter{
-  background:
-    radial-gradient(700px 400px at 15% 0%, rgba(217,164,65,.18), transparent 60%),
-    var(--navy);
-  color:var(--navy-ink);
-}
-.supporter .eyebrow{color:var(--gold)}
-.supporter h2{color:#fff}
-.supporter p{color:var(--navy-muted)}
-.sup-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-@media (max-width:760px){.sup-grid{grid-template-columns:1fr}}
-.sup-points{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:22px}
-.sup-points li{
-  display:flex;gap:12px;font-size:14.5px;color:var(--navy-muted);align-items:baseline;
-}
-.sup-points li::before{content:"●";color:var(--gold);font-size:9px;flex:none}
-
-/* cta band */
-.cta-band{background:var(--red);color:#fff;text-align:center}
-.cta-band .section{padding:72px 0}
-.cta-band h2{color:#fff;font-size:clamp(24px,3.6vw,32px)}
-.cta-band p{opacity:.92;margin:14px auto 28px;max-width:36em}
-.cta-band .btn{background:#fff;color:var(--red)}
-
-/* footer */
-footer.site{background:var(--navy);color:var(--navy-muted);font-size:13.5px}
-footer .wrap{
-  padding-top:56px;padding-bottom:40px;
-  display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;
-}
-@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
-footer h4{color:#fff;font-size:14px;margin-bottom:14px;letter-spacing:.08em}
-footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-footer a{text-decoration:none}
-footer a:hover{color:#fff}
-footer .brandline{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:20px;color:#fff;letter-spacing:.14em}
-footer .legal{border-top:1px solid var(--navy-line);padding:18px 24px;text-align:center;font-size:12px}
-.demo-ribbon{
-  position:fixed;bottom:16px;right:16px;z-index:60;
-  background:var(--navy);color:#fff;font-size:11px;letter-spacing:.14em;
-  padding:7px 14px;border-radius:999px;opacity:.85;pointer-events:none;
-}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
@@ -332,7 +13,7 @@ footer .legal{border-top:1px solid var(--navy-line);padding:18px 24px;text-align
 
 <header class="site">
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="輝蹴会 トップへ">
+    <a class="brand" href="index.html" aria-label="輝蹴会 トップへ">
       <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
         <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.6"/>
         <path d="M20 2 A18 18 0 0 1 20 38 A9 9 0 0 1 20 20 A9 9 0 0 0 20 2Z" fill="#C8373B"/>
@@ -344,13 +25,13 @@ footer .legal{border-top:1px solid var(--navy-line);padding:18px 24px;text-align
       </span>
     </a>
     <ul>
-      <li><a href="#about">私たちの理念</a></li>
-      <li><a href="#world">世界への挑戦</a></li>
-      <li><a href="#programs">クラス・料金</a></li>
-      <li><a href="#news">お知らせ</a></li>
-      <li><a href="#supporter">サポーター</a></li>
+      <li><a href="about.html">私たちの理念</a></li>
+      <li><a href="world.html">世界への挑戦</a></li>
+      <li><a href="programs.html">クラス・料金</a></li>
+      <li><a href="news.html">お知らせ</a></li>
+      <li><a href="supporter.html">サポーター</a></li>
     </ul>
-    <a class="btn btn-primary" href="#trial">無料体験</a>
+    <a class="btn btn-primary" href="trial.html">無料体験</a>
   </div>
 </header>
 
@@ -370,8 +51,8 @@ footer .legal{border-top:1px solid var(--navy-line);padding:18px 24px;text-align
         <h1>蹴り出す一歩が、<br>世界へ<span class="accent">つながる</span>。</h1>
         <p class="lead">輝蹴会は、単なる格闘技道場ではありません。世界テコンドー文化エキスポの舞台で子どもたちが体験した、国境も言葉も越える温かな「情（ジョン）」。その心を育む、武道アカデミーです。</p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#trial">無料体験に申し込む</a>
-          <a class="btn btn-ghost" href="#world">世界への挑戦を見る</a>
+          <a class="btn btn-primary" href="trial.html">無料体験に申し込む</a>
+          <a class="btn btn-ghost" href="world.html">世界への挑戦を見る</a>
         </div>
         <div class="hero-badges">
           <span>世界テコンドー文化エキスポ出場（韓国・茂朱）</span>
@@ -433,7 +114,7 @@ footer .legal{border-top:1px solid var(--navy-line);padding:18px 24px;text-align
           <p>2025年、輝蹴会の子どもたちは韓国・茂朱（ムジュ）で開催された「世界テコンドー文化エキスポ（WTCE）」に参加しました。</p>
           <p class="quote">国境や言葉の壁を越えて、いつでも気軽に挨拶を交わし、子どもたち全員に優しく接してくれる——世界中のテコンドーファミリーの温かい「情」に触れた体験こそ、私たちが目指す人間教育のゴールです。</p>
           <p>大会の結果だけではなく、世界の人々と一つの精神体になる経験。その一部始終を、遠征レポートでご覧いただけます。</p>
-          <p style="margin-top:26px"><a class="btn btn-ghost" href="#news">遠征レポートを読む</a></p>
+          <p style="margin-top:26px"><a class="btn btn-ghost" href="world.html">遠征レポートを読む</a></p>
         </div>
       </div>
     </div>
@@ -462,7 +143,7 @@ footer .legal{border-top:1px solid var(--navy-line);padding:18px 24px;text-align
   </section>
 
   <!-- 5. クラス・料金 -->
-  <section class="section" id="programs" style="background:color-mix(in srgb, var(--blue) 4%, var(--bg))">
+  <section class="section tint" id="programs">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Programs &amp; Pricing</p>
@@ -553,7 +234,7 @@ footer .legal{border-top:1px solid var(--navy-line);padding:18px 24px;text-align
   </section>
 
   <!-- 7. NEWS -->
-  <section class="section" id="news" style="padding-top:0">
+  <section class="section top0" id="news">
     <div class="wrap">
       <div class="section-head" style="margin-bottom:20px">
         <p class="eyebrow">News</p>
@@ -563,17 +244,17 @@ footer .legal{border-top:1px solid var(--navy-line);padding:18px 24px;text-align
         <li>
           <time datetime="2026-08-01">2026.08.01</time>
           <span class="cat red">遠征</span>
-          <a href="#world">世界テコンドー文化エキスポ（韓国・茂朱）遠征レポートを公開しました</a>
+          <a href="world.html">世界テコンドー文化エキスポ（韓国・茂朱）遠征レポートを公開しました</a>
         </li>
         <li>
           <time datetime="2026-07-15">2026.07.15</time>
           <span class="cat">お知らせ</span>
-          <a href="#news">夏休み特別スケジュールのご案内（現会員の皆さまへ）</a>
+          <a href="news.html">夏休み特別スケジュールのご案内（現会員の皆さまへ）</a>
         </li>
         <li>
           <time datetime="2026-06-28">2026.06.28</time>
           <span class="cat">地域活動</span>
-          <a href="#supporter">地域スポーツ体験会にブース出展しました — 活動実績を更新</a>
+          <a href="supporter.html">地域スポーツ体験会にブース出展しました — 活動実績を更新</a>
         </li>
       </ul>
     </div>
@@ -597,7 +278,7 @@ footer .legal{border-top:1px solid var(--navy-line);padding:18px 24px;text-align
         <figure class="photo ph-c" style="aspect-ratio:16/10">
           <figcaption class="tag">写真差し替え：地域スポーツ体験会の様子</figcaption>
         </figure>
-        <p style="margin-top:24px"><a class="btn btn-gold" href="#trial">協賛のご相談はこちら</a></p>
+        <p style="margin-top:24px"><a class="btn btn-gold" href="trial.html">協賛のご相談はこちら</a></p>
       </div>
     </div>
   </section>
@@ -607,7 +288,7 @@ footer .legal{border-top:1px solid var(--navy-line);padding:18px 24px;text-align
     <div class="section wrap">
       <h2>まずは、無料体験から。</h2>
       <p>道着がなくても、運動が苦手でも大丈夫。蹴り出す一歩を、私たちと一緒に。見学だけのご参加も歓迎です。</p>
-      <a class="btn" href="mailto:contact@kishusports.work?subject=無料体験の申し込み">無料体験に申し込む</a>
+      <a class="btn" href="trial.html">無料体験に申し込む</a>
     </div>
   </section>
 
@@ -622,18 +303,18 @@ footer .legal{border-top:1px solid var(--navy-line);padding:18px 24px;text-align
     <div>
       <h4>サイトマップ</h4>
       <ul>
-        <li><a href="#about">私たちの理念</a></li>
-        <li><a href="#world">世界への挑戦（遠征レポート）</a></li>
-        <li><a href="#programs">クラス・料金案内</a></li>
-        <li><a href="#supporter">輝蹴会サポーター（助成・協賛）</a></li>
-        <li><a href="#news">お知らせ</a></li>
+        <li><a href="about.html">私たちの理念</a></li>
+        <li><a href="world.html">世界への挑戦（遠征レポート）</a></li>
+        <li><a href="programs.html">クラス・料金案内</a></li>
+        <li><a href="supporter.html">輝蹴会サポーター（助成・協賛）</a></li>
+        <li><a href="news.html">お知らせ</a></li>
       </ul>
     </div>
     <div>
       <h4>お問い合わせ</h4>
       <ul>
-        <li><a href="#trial">体験入会のお申し込み</a></li>
-        <li><a href="#supporter">協賛のご相談</a></li>
+        <li><a href="trial.html">体験入会のお申し込み</a></li>
+        <li><a href="supporter.html">協賛のご相談</a></li>
         <li><a href="https://kishusports.work/">現行サイト（kishusports.work）</a></li>
       </ul>
     </div>
