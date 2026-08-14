@@ -88,6 +88,7 @@ def main():
             scripts.append(s)
 
     doc = "\n".join([
+        '<meta charset="utf-8">',
         "<title>輝蹴会</title>",
         "<style>%s%s</style>" % (css, ROUTER_CSS),
         '<div class="demo-ribbon">REBRANDING DEMO</div>',

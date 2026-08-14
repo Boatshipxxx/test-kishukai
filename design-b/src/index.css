@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #000000;
+  --color-ink-soft: #333333;
+  --color-gold: #f4de1e;
+  --color-blood: #d8232a;
+  --color-paper: #ffffff;
+  --color-fog: #f4f4f4;
+  --font-display: 'Oswald', 'Noto Sans JP', sans-serif;
+  --font-body: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+}
+
+html {
+  font-family: var(--font-body);
+  color: #000;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #f4de1e;
+  color: #000;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* 斜めストライプ（テコンドーの躍動を示す装飾帯） */
+.stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #f4de1e 0 14px,
+    #000 14px 28px
+  );
+}
+
+/* Hide scrollbars by default, reveal on active scroll containers */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
