@@ -19,10 +19,29 @@
 
 ```bash
 cd design-b
-npm install
-npm run dev      # 開発サーバー
-npm run build    # dist/ に本番ビルド
+pnpm install
+pnpm dev      # 開発サーバー
+pnpm build    # dist/ に本番ビルド
+pnpm format   # oxfmt（Figma Make と同じフォーマッタ）
 ```
+
+検証済みの組み合わせ：Vite 8 / @vitejs/plugin-react 6 / Tailwind CSS 4 / React 19 / TypeScript 5.9
+（Figma Make の `pnpm-lock.yaml` と同じメジャーバージョン）。
+
+### ⚠ oxfmt の注意点
+
+`oxfmt@0.2.0` は**インラインの型リテラルを壊します**。
+
+```ts
+// これを pnpm format にかけると…
+const TARGETS: { id: Target; label: string }[] = []
+// セミコロンが消えて構文エラーになる
+const TARGETS: { id: Target label: string }[] = []
+```
+
+そのため本コードでは型を必ず名前付き（`type TargetDef = { ... }`）に切り出しています。
+App.tsx を書き換える際もインライン型リテラルは使わないでください。
+現状のコードは `pnpm format` を繰り返しても変化しないことを確認済みです。
 
 ## デザインの要点
 
