@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="1076" viewBox="0 0 460 1076">
+<rect id="背景" width="460" height="1076" fill="#f4f4f2"/>
+<g id="タイトル">
+<text x="20" y="35" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="17" font-weight="700" fill="#1a1a1a" text-anchor="start">整理案② 差別化キープ（6ブロック）</text>
+<text x="20" y="56" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10.5" font-weight="400" fill="#666666" text-anchor="start">WTCE遠征を「帯」1枚に圧縮して残す推奨案。</text>
+<text x="20" y="71" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10.5" font-weight="400" fill="#666666" text-anchor="start">強み: 差別化と簡潔さの両立 ／ 弱み: 案①より1画面ぶん長い</text>
+</g>
+<g id="ヘッダー">
+<rect x="20" y="82" width="420" height="70" fill="#ffffff" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="106" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#444444" text-anchor="start">ヘッダー</text>
+<rect x="34" y="120" width="70" height="8" rx="4" fill="#9a9a9a"/>
+<rect x="114" y="120" width="234" height="8" rx="4" fill="#d9d9d9"/>
+<rect x="356" y="113" width="70" height="22" rx="0" fill="#111111"/>
+<text x="391" y="128" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">無料体験</text>
+</g>
+<g id="1. ヒーロー">
+<rect x="20" y="162" width="420" height="150" fill="#2b2b2b" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="186" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#e8c988" text-anchor="start">1. ヒーロー</text>
+<rect x="34" y="196" width="337" height="22" rx="4" fill="#e8e8e8"/>
+<rect x="34" y="224" width="235" height="22" rx="4" fill="#e8e8e8"/>
+<rect x="34" y="254" width="353" height="8" rx="4" fill="#5a5a5a"/>
+<rect x="34" y="270" width="132" height="22" rx="0" fill="#111111"/>
+<text x="100" y="284" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">無料体験に申し込む</text>
+<rect x="174" y="270" width="110" height="22" rx="0" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="229" y="284" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#111111" text-anchor="middle">世界への挑戦</text>
+</g>
+<g id="2. 保護者への3つの約束（安・世・情）">
+<rect x="20" y="322" width="420" height="90" fill="#ffffff" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="346" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#444444" text-anchor="start">2. 保護者への3つの約束（安・世・情）</text>
+<rect x="34" y="356" width="127" height="44" rx="0" fill="#d9d9d9"/>
+<rect x="167" y="356" width="127" height="44" rx="0" fill="#d9d9d9"/>
+<rect x="299" y="356" width="127" height="44" rx="0" fill="#d9d9d9"/>
+</g>
+<g id="3. 世界への挑戦（帯に圧縮）">
+<rect x="20" y="422" width="420" height="123" fill="#2b2b2b" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="446" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#e8c988" text-anchor="start">3. 世界への挑戦（帯に圧縮）</text>
+<rect x="34" y="456" width="180" height="56" rx="0" fill="#ffffff" stroke="#aaaaaa" stroke-width="1.5"/>
+<line x1="34" y1="456" x2="214" y2="512" stroke="#c4c4c4" stroke-width="1.5"/>
+<line x1="214" y1="456" x2="34" y2="512" stroke="#c4c4c4" stroke-width="1.5"/>
+<rect x="222" y="462" width="204" height="8" rx="4" fill="#d9d9d9"/>
+<rect x="222" y="476" width="163" height="8" rx="4" fill="#d9d9d9"/>
+<rect x="222" y="490" width="122" height="8" rx="4" fill="#d9d9d9"/>
+<text x="34" y="528" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10.5" font-weight="400" fill="#666666" text-anchor="start">写真1枚＋引用1文＋リンクのみ。データ表・ギャラリーは下層へ</text>
+</g>
+<g id="4. クラス一覧（簡略カード×5）">
+<rect x="20" y="555" width="420" height="161" fill="#ffffff" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="579" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#444444" text-anchor="start">4. クラス一覧（簡略カード×5）</text>
+<rect x="34" y="589" width="127" height="44" rx="0" fill="#ffffff" stroke="#aaaaaa" stroke-width="1.5"/>
+<line x1="34" y1="589" x2="161" y2="633" stroke="#c4c4c4" stroke-width="1.5"/>
+<line x1="161" y1="589" x2="34" y2="633" stroke="#c4c4c4" stroke-width="1.5"/>
+<rect x="167" y="589" width="127" height="44" rx="0" fill="#ffffff" stroke="#aaaaaa" stroke-width="1.5"/>
+<line x1="167" y1="589" x2="293" y2="633" stroke="#c4c4c4" stroke-width="1.5"/>
+<line x1="293" y1="589" x2="167" y2="633" stroke="#c4c4c4" stroke-width="1.5"/>
+<rect x="299" y="589" width="127" height="44" rx="0" fill="#ffffff" stroke="#aaaaaa" stroke-width="1.5"/>
+<line x1="299" y1="589" x2="426" y2="633" stroke="#c4c4c4" stroke-width="1.5"/>
+<line x1="426" y1="589" x2="299" y2="633" stroke="#c4c4c4" stroke-width="1.5"/>
+<rect x="34" y="639" width="127" height="44" rx="0" fill="#ffffff" stroke="#aaaaaa" stroke-width="1.5"/>
+<line x1="34" y1="639" x2="161" y2="683" stroke="#c4c4c4" stroke-width="1.5"/>
+<line x1="161" y1="639" x2="34" y2="683" stroke="#c4c4c4" stroke-width="1.5"/>
+<rect x="167" y="639" width="127" height="44" rx="0" fill="#ffffff" stroke="#aaaaaa" stroke-width="1.5"/>
+<line x1="167" y1="639" x2="293" y2="683" stroke="#c4c4c4" stroke-width="1.5"/>
+<line x1="293" y1="639" x2="167" y2="683" stroke="#c4c4c4" stroke-width="1.5"/>
+<rect x="299" y="639" width="127" height="44" rx="0" fill="#ffffff" stroke="#999999" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="333" y="652" width="60" height="18" rx="0" fill="#111111"/>
+<text x="363" y="664" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">体験へ</text>
+<text x="34" y="699" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10.5" font-weight="400" fill="#666666" text-anchor="start">フィルタなし・カード明細は3行まで</text>
+</g>
+<g id="5. 料金プラン×3（明細なし）">
+<rect x="20" y="726" width="420" height="92" fill="#ffffff" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="750" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#444444" text-anchor="start">5. 料金プラン×3（明細なし）</text>
+<rect x="34" y="760" width="127" height="46" rx="8" fill="#d9d9d9"/>
+<rect x="167" y="760" width="127" height="46" rx="8" fill="#9a9a9a"/>
+<rect x="299" y="760" width="127" height="46" rx="8" fill="#d9d9d9"/>
+</g>
+<g id="協賛バナー（1行）">
+<rect x="20" y="828" width="420" height="68" fill="#f3e08a" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="852" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#5c4800" text-anchor="start">協賛バナー（1行）</text>
+<rect x="34" y="866" width="272" height="8" rx="4" fill="#d9d9d9"/>
+<rect x="316" y="860" width="110" height="20" rx="0" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="371" y="874" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#111111" text-anchor="middle">協賛のご相談</text>
+</g>
+<g id="6. CTA（START YOUR FIRST KICK）">
+<rect x="20" y="906" width="420" height="70" fill="#2b2b2b" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="930" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#e8c988" text-anchor="start">6. CTA（START YOUR FIRST KICK）</text>
+<rect x="160" y="940" width="140" height="22" rx="0" fill="#111111"/>
+<text x="230" y="954" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">無料体験に申し込む</text>
+</g>
+<g id="フッター（3カラム）">
+<rect x="20" y="986" width="420" height="70" fill="#ffffff" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="1010" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#444444" text-anchor="start">フッター（3カラム）</text>
+<rect x="34" y="1020" width="127" height="24" rx="0" fill="#d9d9d9"/>
+<rect x="167" y="1020" width="127" height="24" rx="0" fill="#d9d9d9"/>
+<rect x="299" y="1020" width="127" height="24" rx="0" fill="#d9d9d9"/>
+</g>
+</svg>
