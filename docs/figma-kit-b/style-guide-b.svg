@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1290" viewBox="0 0 1080 1290">
+<rect id="背景" width="1080" height="1290" fill="#ffffff"/>
+<g id="ヘッダー">
+<rect x="0" y="0" width="1080" height="96" fill="#000000"/>
+<circle cx="64" cy="48" r="22" fill="none" stroke="#f4de1e" stroke-width="2.4"/>
+<path d="M 64 28.2 A 19.8 19.8 0 0 1 64 67.8 A 9.9 9.9 0 0 1 64 48 A 9.9 9.9 0 0 0 64 28.2 Z" fill="#d8232a"/>
+<path d="M 64 67.8 A 19.8 19.8 0 0 1 64 28.2 A 9.9 9.9 0 0 1 64 48 A 9.9 9.9 0 0 0 64 67.8 Z" fill="#f4de1e"/>
+<text x="102" y="42" font-family="Oswald, Noto Sans JP, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="start">輝蹴会 DESIGN B「ATHLETIC」</text>
+<text x="102" y="66" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="500" fill="#f4de1e" text-anchor="start" letter-spacing="3">STYLE GUIDE — FIGMA用デザイントークン</text>
+<text x="1040" y="58" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#999999" text-anchor="end">kishukai-mock-b.vercel.app 準拠</text>
+</g>
+<g id="カラーパレット">
+<text x="40" y="134" font-family="Oswald, Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#111111" text-anchor="start" letter-spacing="3">COLOR</text>
+<rect x="40" y="148" width="157" height="84" fill="#000000"/>
+<text x="40" y="250" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="start">ink / 黒</text>
+<text x="40" y="266" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">#000000</text>
+<text x="40" y="281" font-family="Noto Sans JP, sans-serif" font-size="10" font-weight="400" fill="#777777" text-anchor="start">地色・文字・ヘッダー</text>
+<rect x="209" y="148" width="157" height="84" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+<text x="209" y="250" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="start">paper / 白</text>
+<text x="209" y="266" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">#FFFFFF</text>
+<text x="209" y="281" font-family="Noto Sans JP, sans-serif" font-size="10" font-weight="400" fill="#777777" text-anchor="start">基本背景</text>
+<rect x="377" y="148" width="157" height="84" fill="#f4f4f4"/>
+<text x="377" y="250" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="start">fog / 霧</text>
+<text x="377" y="266" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">#F4F4F4</text>
+<text x="377" y="281" font-family="Noto Sans JP, sans-serif" font-size="10" font-weight="400" fill="#777777" text-anchor="start">交互セクション背景</text>
+<rect x="546" y="148" width="157" height="84" fill="#f4de1e"/>
+<text x="546" y="250" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="start">gold / 輝</text>
+<text x="546" y="266" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">#F4DE1E</text>
+<text x="546" y="281" font-family="Noto Sans JP, sans-serif" font-size="10" font-weight="400" fill="#777777" text-anchor="start">CTA・アクティブ・強調</text>
+<rect x="715" y="148" width="157" height="84" fill="#d8232a"/>
+<text x="715" y="250" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="start">blood / 紅</text>
+<text x="715" y="266" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">#D8232A</text>
+<text x="715" y="281" font-family="Noto Sans JP, sans-serif" font-size="10" font-weight="400" fill="#777777" text-anchor="start">副アクセント（太極の紅）</text>
+<rect x="883" y="148" width="157" height="84" fill="#16305c"/>
+<text x="883" y="250" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="start">photo navy</text>
+<text x="883" y="266" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">#16305C</text>
+<text x="883" y="281" font-family="Noto Sans JP, sans-serif" font-size="10" font-weight="400" fill="#777777" text-anchor="start">写真プレースホルダー系</text>
+</g>
+<g id="タイポグラフィ">
+<text x="40" y="322" font-family="Oswald, Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#111111" text-anchor="start" letter-spacing="3">TYPOGRAPHY</text>
+<text x="40" y="394" font-family="Oswald, Noto Sans JP, sans-serif" font-size="48" font-weight="700" fill="#000000" text-anchor="start">KICK TO THE WORLD</text>
+<text x="710" y="370" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">英字見出し: Oswald Bold / 大文字</text>
+<text x="710" y="386" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">H1実寸 8.5rem(136px) / 行間0.86 / tracking 0</text>
+<text x="40" y="452" font-family="Noto Sans JP, sans-serif" font-size="32" font-weight="700" fill="#000000" text-anchor="start">保護者への3つの約束</text>
+<text x="710" y="434" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">日本語見出し: Noto Sans JP Bold</text>
+<text x="710" y="450" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">H2実寸 2.25〜3rem(36〜48px)</text>
+<text x="40" y="490" font-family="Oswald, Noto Sans JP, sans-serif" font-size="12" font-weight="500" fill="#d8232a" text-anchor="start" letter-spacing="4">OUR PROMISE</text>
+<text x="710" y="486" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">アイキャッチ: Oswald 12px / tracking .3em / 紅または金</text>
+<text x="40" y="520" font-family="Noto Sans JP, sans-serif" font-size="14" font-weight="400" fill="#333333" text-anchor="start">本文はNoto Sans JP Regular。実寸14px、行間1.75。補足は12pxのblack/50。</text>
+<text x="710" y="516" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">本文: Noto Sans JP 400 / 14px / lh 1.75</text>
+</g>
+<g id="ボタンとタグ">
+<text x="40" y="562" font-family="Oswald, Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#111111" text-anchor="start" letter-spacing="3">BUTTONS / TAGS</text>
+<rect x="40" y="578" width="190" height="44" fill="#f4de1e"/>
+<text x="135" y="605" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">無料体験に申し込む</text>
+<rect x="246" y="578" width="170" height="44" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+<text x="331" y="605" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">世界への挑戦を見る</text>
+<rect x="432" y="578" width="170" height="44" fill="#000000"/>
+<text x="517" y="605" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">このクラスを体験する</text>
+<rect x="618" y="586" width="66" height="24" fill="#f4de1e"/>
+<text x="651" y="602" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#000000" text-anchor="middle" letter-spacing="1">KIDS</text>
+<rect x="696" y="586" width="96" height="24" fill="#000000"/>
+<text x="744" y="602" font-family="Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#f4de1e" text-anchor="middle">いちばん人気</text>
+<text x="40" y="644" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">角丸なし（0px）／ホバーは黒⇔金の色反転／英字ラベルはOswald・大文字</text>
+</g>
+<g id="パターン">
+<text x="40" y="676" font-family="Oswald, Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#111111" text-anchor="start" letter-spacing="3">PATTERNS</text>
+<text x="40" y="706" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">データ行（dl）</text>
+<line x1="40" y1="716" x2="510" y2="716" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
+<text x="40" y="738" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1">対象</text>
+<text x="130" y="738" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="400" fill="#111111" text-anchor="start">幼児〜小学生</text>
+<line x1="40" y1="750" x2="510" y2="750" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
+<text x="40" y="772" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1">実施日時</text>
+<text x="130" y="772" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="400" fill="#111111" text-anchor="start">月・水・金 16:30 – 17:30</text>
+<line x1="40" y1="784" x2="510" y2="784" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
+<text x="40" y="806" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1">月謝</text>
+<text x="130" y="806" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="400" fill="#111111" text-anchor="start">◯,◯◯◯円</text>
+<line x1="40" y1="818" x2="510" y2="818" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
+<text x="560" y="706" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">ヘアライングリッド（gap 1px・黒15%）</text>
+<rect x="560" y="716" width="480" height="104" fill="rgba(0,0,0,0.15)"/>
+<rect x="561" y="717" width="159" height="102" fill="#ffffff"/>
+<rect x="720" y="717" width="159" height="102" fill="#ffffff"/>
+<rect x="881" y="717" width="159" height="102" fill="#ffffff"/>
+</g>
+<g id="ストライプとロゴ">
+<g clip-path="url(#stripeclip-40-854)">
+<clipPath id="stripeclip-40-854"><rect x="40" y="854" width="640" height="20"/></clipPath>
+<rect x="40" y="854" width="640" height="20" fill="#f4de1e"/>
+<polygon points="12,874 26,874 46,854 32,854" fill="#000000"/>
+<polygon points="40,874 54,874 74,854 60,854" fill="#000000"/>
+<polygon points="68,874 82,874 102,854 88,854" fill="#000000"/>
+<polygon points="96,874 110,874 130,854 116,854" fill="#000000"/>
+<polygon points="124,874 138,874 158,854 144,854" fill="#000000"/>
+<polygon points="152,874 166,874 186,854 172,854" fill="#000000"/>
+<polygon points="180,874 194,874 214,854 200,854" fill="#000000"/>
+<polygon points="208,874 222,874 242,854 228,854" fill="#000000"/>
+<polygon points="236,874 250,874 270,854 256,854" fill="#000000"/>
+<polygon points="264,874 278,874 298,854 284,854" fill="#000000"/>
+<polygon points="292,874 306,874 326,854 312,854" fill="#000000"/>
+<polygon points="320,874 334,874 354,854 340,854" fill="#000000"/>
+<polygon points="348,874 362,874 382,854 368,854" fill="#000000"/>
+<polygon points="376,874 390,874 410,854 396,854" fill="#000000"/>
+<polygon points="404,874 418,874 438,854 424,854" fill="#000000"/>
+<polygon points="432,874 446,874 466,854 452,854" fill="#000000"/>
+<polygon points="460,874 474,874 494,854 480,854" fill="#000000"/>
+<polygon points="488,874 502,874 522,854 508,854" fill="#000000"/>
+<polygon points="516,874 530,874 550,854 536,854" fill="#000000"/>
+<polygon points="544,874 558,874 578,854 564,854" fill="#000000"/>
+<polygon points="572,874 586,874 606,854 592,854" fill="#000000"/>
+<polygon points="600,874 614,874 634,854 620,854" fill="#000000"/>
+<polygon points="628,874 642,874 662,854 648,854" fill="#000000"/>
+<polygon points="656,874 670,874 690,854 676,854" fill="#000000"/>
+<polygon points="684,874 698,874 718,854 704,854" fill="#000000"/>
+</g>
+<text x="40" y="898" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">警告ストライプ帯: 金#F4DE1E×黒 / -45deg / 14pxピッチ / 高さ12〜20px</text>
+<circle cx="780" cy="878" r="30" fill="none" stroke="#f4de1e" stroke-width="3.3"/>
+<path d="M 780 851.0 A 27.0 27.0 0 0 1 780 905.0 A 13.5 13.5 0 0 1 780 878 A 13.5 13.5 0 0 0 780 851.0 Z" fill="#d8232a"/>
+<path d="M 780 905.0 A 27.0 27.0 0 0 1 780 851.0 A 13.5 13.5 0 0 1 780 878 A 13.5 13.5 0 0 0 780 905.0 Z" fill="#f4de1e"/>
+<text x="830" y="874" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="start">ロゴマーク</text>
+<text x="830" y="892" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">logo-kishukai.svg 同梱</text>
+</g>
+<g id="ロゴロックアップ（ヘッダー）">
+<text x="40" y="952" font-family="Oswald, Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#111111" text-anchor="start" letter-spacing="3">LOGO LOCKUP</text>
+<rect x="40" y="968" width="1000" height="104" fill="#000000"/>
+<rect x="64" y="992" width="56" height="56" fill="rgba(255,255,255,0.06)" stroke="#f4de1e" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="92" y="1018" font-family="Oswald, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#f4de1e" text-anchor="middle" letter-spacing="1">LOGO</text>
+<text x="92" y="1032" font-family="Oswald, Noto Sans JP, sans-serif" font-size="9" font-weight="400" fill="#999999" text-anchor="middle">56×56</text>
+<text x="136" y="1018" font-family="Noto Sans JP, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="start" letter-spacing="2">輝蹴会</text>
+<text x="136" y="1038" font-family="Oswald, Noto Sans JP, sans-serif" font-size="10" font-weight="500" fill="#8a8a8a" text-anchor="start" letter-spacing="4">KISHUKAI TAEKWONDO</text>
+<line x1="120" y1="1058" x2="136" y2="1058" stroke="#f4de1e" stroke-width="1"/>
+<text x="128" y="1072" font-family="Oswald, Noto Sans JP, sans-serif" font-size="9" font-weight="700" fill="#f4de1e" text-anchor="middle">16</text>
+<text x="1016" y="1026" font-family="Oswald, Noto Sans JP, sans-serif" font-size="12" font-weight="500" fill="#cccccc" text-anchor="end" letter-spacing="2">ABOUT   WORLD   PROGRAM   PRICE</text>
+<text x="40" y="1096" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">実ロゴ（TAEKWONDO KISHUKAI エンブレム）を56×56のスロットに配置し、右に16pxあけて社名。</text>
+<text x="40" y="1112" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">黒背景に載せるため、ロゴは白フチ付きか背景透過PNG/SVGを使用。ヘッダー高さは96px（実装64px相当）。</text>
+</g>
+<g id="レイアウトルール">
+<rect x="40" y="1140" width="1000" height="118" fill="#f4f4f4"/>
+<text x="60" y="1168" font-family="Noto Sans JP, sans-serif" font-size="12.5" font-weight="400" fill="#333333" text-anchor="start">・コンテナ最大幅 1240px ／ セクション上下余白 64px（py-16）</text>
+<text x="60" y="1192" font-family="Noto Sans JP, sans-serif" font-size="12.5" font-weight="400" fill="#333333" text-anchor="start">・角丸は全要素 0px ／ 罫線は黒15%の1pxヘアライン ／ カード間は1pxギャップのグリッド</text>
+<text x="60" y="1216" font-family="Noto Sans JP, sans-serif" font-size="12.5" font-weight="400" fill="#333333" text-anchor="start">・アクセントは金を主・紅を副。同一要素に両方は使わない ／ 写真は黒系グラデのプレースホルダー（差し替え前提）</text>
+<text x="60" y="1240" font-family="Noto Sans JP, sans-serif" font-size="12.5" font-weight="400" fill="#333333" text-anchor="start">・フォント: Oswald（英字見出し）・Noto Sans JP（日本語）— どちらもFigmaのGoogle Fontsで選択可</text>
+</g>
+</svg>
