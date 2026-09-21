@@ -45,9 +45,26 @@ export async function saveContent(next: Content): Promise<void> {
     // SDKのバージョンによって上書きの明示が要るため、両方に対応する
     await put(BLOB_PATH, body, { ...opts, allowOverwrite: true } as Parameters<typeof put>[2])
   } catch {
-    await del(BLOB_PATH).catch(() => {})
-    await put(BLOB_PATH, body, opts)
+    try {
+      await del(BLOB_PATH).catch(() => {})
+      await put(BLOB_PATH, body, opts)
+    } catch (e) {
+      throw new Error(describeBlobError(e))
+    }
   }
+}
+
+/** Blobの失敗理由を、管理画面でそのまま読める日本語にする。 */
+export function describeBlobError(e: unknown): string {
+  const raw = e instanceof Error ? e.message : String(e)
+  if (/access|private|forbidden|not allowed/i.test(raw)) {
+    return (
+      "保存に失敗しました。接続中のBlobストアが Private の可能性があります。" +
+      "サイトの画像は公開URLが必要なため、Public のストアを作成して接続し直してください。" +
+      `（詳細: ${raw}）`
+    )
+  }
+  return `保存に失敗しました。（詳細: ${raw}）`
 }
 
 /** 既定値に保存値を重ねる。項目を増やしても保存済みデータが壊れない。 */

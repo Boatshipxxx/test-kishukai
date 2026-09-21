@@ -1,7 +1,7 @@
 import { put } from "@vercel/blob"
 import { NextResponse } from "next/server"
 import { isLoggedIn } from "@/lib/auth"
-import { hasBlob } from "@/lib/content"
+import { describeBlobError, hasBlob } from "@/lib/content"
 
 const MAX_BYTES = 8 * 1024 * 1024
 const ALLOWED = ["image/png", "image/jpeg", "image/webp", "image/svg+xml", "image/avif", "image/gif"]
@@ -33,9 +33,13 @@ export async function POST(req: Request) {
   }
 
   const safe = file.name.replace(/[^\w.-]+/g, "-").slice(-80) || "image"
-  const blob = await put(`uploads/${Date.now()}-${safe}`, file, {
-    access: "public",
-    contentType: file.type,
-  })
-  return NextResponse.json({ url: blob.url })
+  try {
+    const blob = await put(`uploads/${Date.now()}-${safe}`, file, {
+      access: "public",
+      contentType: file.type,
+    })
+    return NextResponse.json({ url: blob.url })
+  } catch (e) {
+    return NextResponse.json({ error: describeBlobError(e) }, { status: 502 })
+  }
 }
