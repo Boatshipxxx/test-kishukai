@@ -25,8 +25,13 @@ Vercel のプロジェクト → **Settings → Environment Variables**
 ### 2. 保存先（Vercel Blob）を用意する
 
 Vercel のプロジェクト → **Storage → Create Database → Blob** を選び、作成したストアを
-このプロジェクトに **Connect** します。`BLOB_READ_WRITE_TOKEN` が自動で環境変数に追加されるので、
-そのあと一度 **Redeploy** してください。
+このプロジェクトに **Connect** します。そのあと一度 **Redeploy** してください。
+
+- **アクセス設定は必ず `Public`** を選んでください。サイトに出す画像は公開URLで配信する必要があるため、
+  Private ストアでは表示できません。
+- Connect すると環境変数が自動で入ります。Vercel のバージョンにより
+  `BLOB_READ_WRITE_TOKEN`（従来方式）か `BLOB_STORE_ID`（OIDC方式）のどちらかになりますが、
+  **どちらでも動きます**。
 
 > 未設定でもサイトは表示され、管理画面も開けます。ただし編集内容と画像は保存されず、
 > 管理画面の上部に「保存先が未設定です」と表示されます。

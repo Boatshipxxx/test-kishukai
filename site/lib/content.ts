@@ -1,12 +1,16 @@
-import { del, head, put } from "@vercel/blob"
+import { head, put } from "@vercel/blob"
 import defaults from "@/content/default.json"
 import type { Content } from "./types"
 
 const BLOB_PATH = "content/site.json"
 
-/** Vercel Blob が未設定でも既定コンテンツで動くようにする。 */
+/**
+ * Vercel Blob が未設定でも既定コンテンツで動くようにする。
+ * 接続方式は2通りある。従来のトークン方式（BLOB_READ_WRITE_TOKEN）と、
+ * 新しいOIDC方式（BLOB_STORE_ID + 実行時に自動付与される VERCEL_OIDC_TOKEN）。
+ */
 export function hasBlob(): boolean {
-  return Boolean(process.env.BLOB_READ_WRITE_TOKEN)
+  return Boolean(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID)
 }
 
 export function defaultContent(): Content {
@@ -34,23 +38,16 @@ export async function saveContent(next: Content): Promise<void> {
       "Vercel Blob が未設定です。Vercel の Storage で Blob ストアを作成し、プロジェクトに接続してください。",
     )
   }
-  const body = JSON.stringify(next, null, 2)
-  const opts = {
-    access: "public" as const,
-    contentType: "application/json",
-    addRandomSuffix: false,
-    cacheControlMaxAge: 0,
-  }
   try {
-    // SDKのバージョンによって上書きの明示が要るため、両方に対応する
-    await put(BLOB_PATH, body, { ...opts, allowOverwrite: true } as Parameters<typeof put>[2])
-  } catch {
-    try {
-      await del(BLOB_PATH).catch(() => {})
-      await put(BLOB_PATH, body, opts)
-    } catch (e) {
-      throw new Error(describeBlobError(e))
-    }
+    await put(BLOB_PATH, JSON.stringify(next, null, 2), {
+      access: "public",
+      contentType: "application/json",
+      addRandomSuffix: false,
+      allowOverwrite: true,
+      cacheControlMaxAge: 0,
+    })
+  } catch (e) {
+    throw new Error(describeBlobError(e))
   }
 }
 
