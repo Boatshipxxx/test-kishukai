@@ -8,6 +8,8 @@ export type Content = {
     title: string
     description: string
     ctaLabel: string
+    /** Instagramのユーザー名（@なし）。DMボタンとフッターのIGアイコンに使う */
+    instagram: string
     nav: { label: string; href: string }[]
   }
   hero: {
@@ -73,6 +75,20 @@ export type Content = {
     plans: { name: string; en: string; price: string; monthly: string; note: string; featured: boolean }[]
     details: { label: string; value: string }[]
   }
+  recruit: {
+    visible: boolean
+    eyebrow: string
+    title: string
+    status: string
+    lead: string
+    image: Img
+    imageCaption: string
+    items: { name: string; status: string }[]
+    steps: { title: string; body: string }[]
+    dmTemplate: string
+    dmLabel: string
+    note: string
+  }
   about: {
     visible: boolean
     eyebrow: string
@@ -123,4 +139,13 @@ export const TARGET_LABELS: Record<string, { label: string; en: string }> = {
   junior: { label: "小中学生", en: "JUNIOR" },
   athlete: { label: "選手育成", en: "ATHLETE" },
   adult: { label: "大人・保護者", en: "ADULT" },
+}
+
+/** Instagramのユーザー名を正規化する（@やURLで入力されても受け付ける）。 */
+export function igUsername(raw: string | undefined): string {
+  return (raw ?? "")
+    .trim()
+    .replace(/^https?:\/\/(www\.)?instagram\.com\//i, "")
+    .replace(/^@/, "")
+    .replace(/[/?#].*$/, "")
 }

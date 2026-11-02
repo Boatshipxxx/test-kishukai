@@ -3,11 +3,17 @@ import Photo from "@/components/Photo"
 import ProgramSection from "@/components/ProgramSection"
 import FaqSection from "@/components/FaqSection"
 import { GhostButton, GoldButton, Logo, SectionHead } from "@/components/ui"
+import { igUsername } from "@/lib/types"
 
 export const revalidate = 0
 
 export default async function Home() {
   const c = await getContent()
+  const ig = igUsername(c.site.instagram)
+  const igUrl = ig ? `https://www.instagram.com/${ig}/` : ""
+  const dmUrl = ig ? `https://ig.me/m/${ig}` : ""
+  // 募集欄を公開している間は、体験系のボタンをすべて募集欄に集める
+  const trialHref = c.recruit.visible ? "#recruit" : "#trial"
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -34,14 +40,14 @@ export default async function Home() {
               </a>
             ))}
             <a
-              href="#trial"
+              href={trialHref}
               className="font-display text-sm uppercase tracking-wide px-5 py-2 ml-3 bg-gold text-black hover:bg-white transition-colors duration-150"
             >
               {c.site.ctaLabel}
             </a>
           </nav>
           <a
-            href="#trial"
+            href={trialHref}
             className="lg:hidden font-display uppercase bg-gold text-black px-3 py-1.5 text-sm"
           >
             {c.site.ctaLabel}
@@ -79,7 +85,7 @@ export default async function Home() {
             <p className="mt-6 font-display text-xl md:text-2xl tracking-wide">{c.hero.catch}</p>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/70">{c.hero.lead}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <GoldButton href="#trial">{c.hero.ctaPrimary}</GoldButton>
+              <GoldButton href={trialHref}>{c.hero.ctaPrimary}</GoldButton>
               <GhostButton href="#world" onDark>
                 {c.hero.ctaSecondary}
               </GhostButton>
@@ -172,7 +178,7 @@ export default async function Home() {
       ) : null}
 
       {/* クラス一覧 */}
-      {c.program.visible ? <ProgramSection data={c.program} /> : null}
+      {c.program.visible ? <ProgramSection data={c.program} trialHref={trialHref} /> : null}
 
       {/* 料金 */}
       {c.price.visible ? (
@@ -237,6 +243,88 @@ export default async function Home() {
               </div>
             ) : null}
             {c.price.note ? <p className="mt-4 text-xs text-black/50">{c.price.note}</p> : null}
+          </div>
+        </section>
+      ) : null}
+
+      {/* 募集欄（Instagram DM） */}
+      {c.recruit.visible ? (
+        <section id="recruit" className="bg-black text-white">
+          <div className="mx-auto max-w-[1240px] px-4 py-16 grid gap-10 lg:grid-cols-[1fr_0.8fr]">
+            <div>
+              <div className="flex flex-wrap items-center gap-3">
+                <p className="font-display text-gold tracking-[0.3em] text-xs">{c.recruit.eyebrow}</p>
+                {c.recruit.status ? (
+                  <span className="bg-gold text-black font-display text-[11px] tracking-widest px-2 py-0.5">
+                    {c.recruit.status}
+                  </span>
+                ) : null}
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold leading-none mt-2">
+                {c.recruit.title}
+              </h2>
+              <p className="mt-5 text-sm leading-relaxed text-white/70">{c.recruit.lead}</p>
+
+              {c.recruit.items.length ? (
+                <ul className="mt-7 grid gap-px bg-white/15 border border-white/15 sm:grid-cols-2">
+                  {c.recruit.items.map((it, i) => (
+                    <li
+                      key={it.name + i}
+                      className="bg-black flex items-center justify-between gap-3 px-4 py-3"
+                    >
+                      <span className="text-sm">{it.name}</span>
+                      {it.status ? (
+                        <span className="font-display text-[11px] tracking-widest border border-gold text-gold px-2 py-0.5 shrink-0">
+                          {it.status}
+                        </span>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+
+              {c.recruit.steps.length ? (
+                <ol className="mt-7 grid gap-px bg-white/15 border border-white/15 md:grid-cols-3">
+                  {c.recruit.steps.map((st, i) => (
+                    <li key={st.title + i} className="bg-black p-5">
+                      <p className="font-display text-gold text-2xl font-bold leading-none">
+                        {String(i + 1).padStart(2, "0")}
+                      </p>
+                      <p className="font-display font-bold mt-3">{st.title}</p>
+                      <p className="text-xs mt-2 leading-relaxed text-white/60">{st.body}</p>
+                    </li>
+                  ))}
+                </ol>
+              ) : null}
+
+              {c.recruit.dmTemplate ? (
+                <div className="mt-7 border border-white/15 p-5">
+                  <p className="font-display text-xs tracking-[0.2em] text-gold">DMで送っていただく内容</p>
+                  <p className="mt-3 text-sm leading-relaxed whitespace-pre-line">{c.recruit.dmTemplate}</p>
+                </div>
+              ) : null}
+
+              {dmUrl ? (
+                <div className="mt-7">
+                  <a
+                    href={dmUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block font-display uppercase tracking-wide text-sm px-7 py-3.5 bg-gold text-black border border-gold hover:bg-black hover:text-gold transition-colors duration-150"
+                  >
+                    {c.recruit.dmLabel}
+                  </a>
+                  <p className="mt-2 text-xs text-white/50">Instagram @{ig} が開きます</p>
+                </div>
+              ) : null}
+              {c.recruit.note ? <p className="mt-4 text-xs text-white/50">{c.recruit.note}</p> : null}
+            </div>
+            <Photo
+              src={c.recruit.image}
+              caption={c.recruit.image ? undefined : c.recruit.imageCaption}
+              tone="blood"
+              className="aspect-[4/3] border border-white/15 self-start"
+            />
           </div>
         </section>
       ) : null}
@@ -358,8 +446,12 @@ export default async function Home() {
             <p className="font-display text-xl mt-4">{c.cta.titleJa}</p>
             <p className="mt-4 text-sm text-white/70 max-w-xl mx-auto leading-relaxed">{c.cta.lead}</p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <GoldButton>{c.cta.primaryLabel}</GoldButton>
-              <GhostButton onDark>{c.cta.secondaryLabel}</GhostButton>
+              <GoldButton href={c.recruit.visible ? dmUrl || "#recruit" : "#trial"}>
+                {c.cta.primaryLabel}
+              </GoldButton>
+              <GhostButton href="#program" onDark>
+                {c.cta.secondaryLabel}
+              </GhostButton>
             </div>
           </div>
         </section>
@@ -406,7 +498,8 @@ export default async function Home() {
               {c.footer.social.map((s) => (
                 <a
                   key={s}
-                  href="#"
+                  href={s === "IG" && igUrl ? igUrl : "#"}
+                  {...(s === "IG" && igUrl ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="h-9 w-9 grid place-items-center bg-white/10 font-display text-xs hover:bg-gold hover:text-black transition-colors duration-150"
                 >
                   {s}

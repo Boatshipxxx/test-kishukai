@@ -7,7 +7,14 @@ import { TARGET_LABELS, type Content } from "@/lib/types"
 
 const TONES = ["navy", "blood", "gold"] as const
 
-export default function ProgramSection({ data }: { data: Content["program"] }) {
+export default function ProgramSection({
+  data,
+  trialHref = "#trial",
+}: {
+  data: Content["program"]
+  /** 体験ボタンの飛び先（募集欄が公開中なら #recruit） */
+  trialHref?: string
+}) {
   const [target, setTarget] = useState<string>("all")
 
   const used = useMemo(() => {
@@ -112,7 +119,7 @@ export default function ProgramSection({ data }: { data: Content["program"] }) {
                     ))}
                 </dl>
                 <a
-                  href="#trial"
+                  href={trialHref}
                   className="mt-5 text-center font-display uppercase tracking-wide text-sm px-4 py-2.5 bg-black text-white hover:bg-gold hover:text-black transition-colors duration-150"
                 >
                   このクラスを体験する
@@ -127,7 +134,7 @@ export default function ProgramSection({ data }: { data: Content["program"] }) {
             </h4>
             <p className="mt-4 text-sm text-white/70 leading-relaxed">{data.trialCardBody}</p>
             <a
-              href="#trial"
+              href={trialHref}
               className="mt-6 text-center font-display uppercase tracking-wide text-sm px-4 py-3 bg-gold text-black hover:bg-white transition-colors duration-150"
             >
               無料体験に申し込む
