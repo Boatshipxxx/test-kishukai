@@ -22,10 +22,11 @@ export type Section = {
 }
 
 const TARGET_OPTIONS = [
-  { value: "kids", label: "キッズ（幼児〜小学生）" },
-  { value: "junior", label: "ジュニア（小中学生）" },
-  { value: "athlete", label: "選手育成" },
-  { value: "adult", label: "大人・保護者" },
+  { value: "preschool", label: "幼児" },
+  { value: "elementary", label: "小学生" },
+  { value: "teen", label: "中学生〜高校生" },
+  { value: "athlete", label: "アスリート" },
+  { value: "adult", label: "大人" },
 ]
 
 export const SCHEMA: Section[] = [
@@ -210,6 +211,7 @@ export const SCHEMA: Section[] = [
       { key: "eyebrow", label: "小見出し（英字）", type: "text" },
       { key: "title", label: "見出し", type: "text" },
       { key: "lead", label: "リード文", type: "textarea" },
+      { key: "discountNote", label: "割引などのお知らせ（料金の直下に強調表示）", type: "textarea", hint: "空欄にすると非表示" },
       { key: "showDetails", label: "入会金などの明細表を表示", type: "boolean" },
       { key: "note", label: "注記", type: "textarea" },
     ],

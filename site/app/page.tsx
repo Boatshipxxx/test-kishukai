@@ -194,7 +194,7 @@ export default async function Home() {
               {c.price.plans.map((p) => (
                 <div
                   key={p.name}
-                  className={"p-7 flex flex-col " + (p.featured ? "bg-black text-white" : "bg-white")}
+                  className={"p-7 md:p-9 flex flex-col " + (p.featured ? "bg-black text-white" : "bg-white")}
                 >
                   <div className="flex items-center justify-between">
                     <p
@@ -212,24 +212,45 @@ export default async function Home() {
                     ) : null}
                   </div>
                   <h3 className="font-display text-2xl font-bold mt-3">{p.name}</h3>
-                  <p className="font-display text-4xl font-bold mt-4 tabular-nums">{p.price}</p>
                   <p
                     className={
-                      "mt-1 font-display text-sm " + (p.featured ? "text-gold" : "text-black/50")
+                      "mt-5 flex items-baseline gap-2 border-t pt-5 " +
+                      (p.featured ? "border-white/15" : "border-black/15")
                     }
                   >
-                    {p.monthly}
+                    <span className="font-display text-5xl md:text-6xl font-bold tabular-nums leading-none">
+                      {p.price}
+                    </span>
+                    {p.monthly ? (
+                      <span
+                        className={
+                          "font-display text-base " + (p.featured ? "text-gold" : "text-black/50")
+                        }
+                      >
+                        {p.monthly}
+                      </span>
+                    ) : null}
                   </p>
-                  <p
-                    className={
-                      "mt-4 text-sm leading-relaxed " + (p.featured ? "text-white/70" : "text-black/60")
-                    }
-                  >
-                    {p.note}
-                  </p>
+                  {p.note ? (
+                    <p
+                      className={
+                        "mt-5 text-sm leading-relaxed " + (p.featured ? "text-white/70" : "text-black/60")
+                      }
+                    >
+                      {p.note}
+                    </p>
+                  ) : null}
                 </div>
               ))}
             </div>
+            {c.price.discountNote ? (
+              <div className="mt-px border border-black/15 border-t-0 bg-gold text-black px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-5">
+                <span className="font-display uppercase tracking-[0.2em] text-xs bg-black text-gold px-2 py-1 w-fit shrink-0">
+                  Discount
+                </span>
+                <p className="text-base font-bold leading-relaxed">{c.price.discountNote}</p>
+              </div>
+            ) : null}
             {c.price.showDetails && c.price.details.length ? (
               <div className="mt-px border border-black/15 border-t-0 bg-white">
                 <dl className="text-sm">

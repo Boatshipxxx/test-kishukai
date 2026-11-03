@@ -1,6 +1,8 @@
 export type Img = string
 
 export type Content = {
+  /** 既定コンテンツの版。保存済みデータの移行判定に使う（lib/content.ts） */
+  contentVersion: number
   site: {
     name: string
     nameEn: string
@@ -76,6 +78,8 @@ export type Content = {
     eyebrow: string
     title: string
     lead: string
+    /** 料金の直下に目立たせて出すお知らせ（割引など） */
+    discountNote: string
     note: string
     showDetails: boolean
     plans: { name: string; en: string; price: string; monthly: string; note: string; featured: boolean }[]
@@ -141,10 +145,11 @@ export type Content = {
 }
 
 export const TARGET_LABELS: Record<string, { label: string; en: string }> = {
-  kids: { label: "幼児〜小学生", en: "KIDS" },
-  junior: { label: "小中学生", en: "JUNIOR" },
-  athlete: { label: "選手育成", en: "ATHLETE" },
-  adult: { label: "大人・保護者", en: "ADULT" },
+  preschool: { label: "幼児", en: "PRESCHOOL" },
+  elementary: { label: "小学生", en: "ELEMENTARY" },
+  teen: { label: "中学生〜高校生", en: "TEEN" },
+  athlete: { label: "アスリート", en: "ATHLETE" },
+  adult: { label: "大人", en: "ADULT" },
 }
 
 /** Instagramのユーザー名を正規化する（@やURLで入力されても受け付ける）。 */

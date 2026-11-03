@@ -25,7 +25,7 @@ export async function getContent(): Promise<Content> {
     const res = await fetch(meta.url, { cache: "no-store" })
     if (!res.ok) return defaultContent()
     const saved = (await res.json()) as Partial<Content>
-    return mergeContent(defaultContent(), saved)
+    return mergeContent(defaultContent(), migrate(saved))
   } catch {
     // 未保存（BlobNotFound）や一時的な失敗は既定値で表示する
     return defaultContent()
@@ -62,6 +62,49 @@ export function describeBlobError(e: unknown): string {
     )
   }
   return `保存に失敗しました。（詳細: ${raw}）`
+}
+
+/**
+ * 既定コンテンツの版を上げたときに、古い保存データのうち作り直した箇所だけを捨てて既定値に戻す。
+ * 一覧（配列）は保存値がそのまま優先されるため、こうしないと削除したクラスやプランが残り続ける。
+ * 管理画面で一度保存すると新しい版番号も保存され、以降は移行されない。
+ */
+const MIGRATIONS: { version: number; reset: string[][] }[] = [
+  {
+    // v2: クラスを幼児/小学生/中高生/アスリート/大人の5つに再編、料金を2プランに、サイトマップ更新
+    version: 2,
+    reset: [
+      ["site", "description"],
+      ["hero", "stats"],
+      ["promise", "items"],
+      ["program", "lead"],
+      ["program", "note"],
+      ["program", "showFilter"],
+      ["program", "items"],
+      ["price", "lead"],
+      ["price", "note"],
+      ["price", "plans"],
+      ["price", "details"],
+      ["recruit", "items"],
+      ["faq", "items"],
+      ["footer", "columns"],
+    ],
+  },
+]
+
+function migrate(saved: any): any {
+  const from = Number(saved?.contentVersion ?? 1)
+  const out = JSON.parse(JSON.stringify(saved ?? {}))
+  for (const m of MIGRATIONS) {
+    if (from >= m.version) continue
+    for (const path of m.reset) {
+      let node = out
+      for (const key of path.slice(0, -1)) node = node?.[key]
+      if (node && typeof node === "object") delete node[path[path.length - 1]]
+    }
+  }
+  delete out.contentVersion // 版番号は常に既定値（最新）を使う
+  return out
 }
 
 /** 既定値に保存値を重ねる。項目を増やしても保存済みデータが壊れない。 */
