@@ -433,6 +433,34 @@ export const SCHEMA: Section[] = [
     ],
   },
   {
+    key: "access",
+    label: "アクセス",
+    icon: "access",
+    toggle: true,
+    fields: [
+      { key: "eyebrow", label: "小見出し（英字）", type: "text" },
+      { key: "title", label: "見出し", type: "text" },
+      { key: "lead", label: "リード文", type: "textarea", hint: "地域名（新宿・曙橋・四谷三丁目など）を自然に入れると地域検索に効きます" },
+      { key: "address", label: "住所（表示用）", type: "text", hint: "会場が変わったら lib/site-info.ts の構造化データもあわせて更新してください" },
+      { key: "mapLabel", label: "地図ボタンの文言", type: "text" },
+      { key: "note", label: "注記", type: "textarea" },
+    ],
+    lists: [
+      {
+        key: "stations",
+        label: "最寄り駅",
+        itemLabel: "駅",
+        titleKey: "name",
+        max: 6,
+        fields: [
+          { key: "name", label: "駅名", type: "text" },
+          { key: "line", label: "路線", type: "text" },
+          { key: "walk", label: "徒歩", type: "text", hint: "例: 徒歩5分" },
+        ],
+      },
+    ],
+  },
+  {
     key: "footer",
     label: "フッター",
     icon: "footer",

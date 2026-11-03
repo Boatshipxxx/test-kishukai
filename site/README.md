@@ -101,3 +101,18 @@ ADMIN_PASSWORD=任意のパスワード pnpm dev
 
 写真・料金・曜日・時間・会場・住所・電話番号・指導者名・遠征データは、すべてプレースホルダーです。
 管理画面から順次差し替えてください。
+
+---
+
+## 多言語・SEO（日本語 / 韓国語）
+
+- 日本語 `/`・`/tournaments`、韓国語 `/ko`・`/ko/tournaments`。ヘッダーの `JP | KR` で切り替え
+- 韓国語の本文は `content/ko.json`（管理画面では編集できません）。日本語の一覧の件数を変えた場合は、`ko.json` 側も同じ件数・順番にそろえてください（そろっていない一覧は日本語のまま表示されます）
+- `sitemap.xml` / `robots.txt` / hreflang / 構造化データ（JSON-LD）を出力します
+
+| 環境変数 | 用途 |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | 正式なURL（例: `https://kishukai.jp`）。canonical・hreflang・サイトマップの基点。未設定なら Vercel の本番URL |
+| `SITE_INDEXABLE` | `1` で検索エンジンのインデックスを許可（Production のみ有効）。未設定の間は noindex |
+
+方針は `../docs/SEO_STRATEGY.md`、開発ルールは `../CLAUDE.md` を参照。
