@@ -3,7 +3,8 @@
 import { useMemo, useState } from "react"
 import Photo from "./Photo"
 import { SectionHead } from "./ui"
-import { TARGET_LABELS, type Content } from "@/lib/types"
+import type { Content } from "@/lib/types"
+import { DEFAULT_LOCALE, TARGET_LABELS as ALL_TARGET_LABELS, dict, type Locale } from "@/lib/i18n"
 
 const TONES = ["navy", "blood", "gold"] as const
 
@@ -11,13 +12,17 @@ export default function ProgramSection({
   data,
   trialHref = "#trial",
   igUrl = "",
+  locale = DEFAULT_LOCALE,
 }: {
   data: Content["program"]
   /** 開催曜日の注記からリンクするInstagramのURL */
   igUrl?: string
   /** 体験ボタンの飛び先（募集欄が公開中なら #recruit） */
   trialHref?: string
+  locale?: Locale
 }) {
+  const t = dict(locale)
+  const TARGET_LABELS = ALL_TARGET_LABELS[locale]
   const [target, setTarget] = useState<string>("all")
 
   const used = useMemo(() => {
@@ -46,9 +51,9 @@ export default function ProgramSection({
                 <div className="bg-gold text-black w-24 sm:w-28 shrink-0 flex flex-col items-center justify-center py-5">
                   <span className="font-display text-xs tracking-[0.25em]">{d.en}</span>
                   <span className="font-display text-2xl font-bold leading-none mt-1">
-                    {d.day.replace(/曜日$/, "")}
+                    {d.day.replace(t.weekdayStrip, "")}
                   </span>
-                  <span className="text-[11px] mt-1">曜日</span>
+                  <span className="text-[11px] mt-1">{t.weekdaySuffix}</span>
                 </div>
                 <div className="px-5 py-5 flex flex-col justify-center">
                   <p className="font-display text-2xl md:text-3xl font-bold leading-tight">{d.course}</p>
@@ -67,7 +72,7 @@ export default function ProgramSection({
                   rel="noopener noreferrer"
                   className="ml-2 font-display text-sm border-b border-black hover:text-black/50 transition-colors"
                 >
-                  Instagramを見る →
+                  {t.seeInstagram}
                 </a>
               ) : null}
             </p>
@@ -78,7 +83,7 @@ export default function ProgramSection({
       {data.showFilter && used.length > 1 ? (
         <div className="border border-black">
           <div className="bg-black text-white px-4 py-3 font-display uppercase tracking-widest text-sm flex items-center gap-2">
-            <span className="bg-gold text-black px-1.5">＋</span> 対象で絞り込む / FILTER
+            <span className="bg-gold text-black px-1.5">＋</span> {t.filterTitle}
           </div>
           <div className="p-4 flex flex-wrap items-center gap-2">
             <button
@@ -90,7 +95,7 @@ export default function ProgramSection({
                   : "bg-white text-black hover:bg-black hover:text-white")
               }
             >
-              ALL / 全て
+              {t.filterAll}
             </button>
             {used.map((t) => (
               <button
@@ -115,7 +120,7 @@ export default function ProgramSection({
 
       <div className="flex items-baseline justify-between border-b-2 border-black pb-2 mt-8 mb-6">
         <h3 className="font-display uppercase text-2xl font-bold tracking-wide">Classes</h3>
-        <span className="font-display text-sm text-black/60">{filtered.length} 件</span>
+        <span className="font-display text-sm text-black/60">{t.countSuffix(filtered.length)}</span>
       </div>
 
       {filtered.length === 0 ? (
@@ -129,7 +134,7 @@ export default function ProgramSection({
               <div className="relative">
                 <Photo
                   src={c.image}
-                  caption={c.image ? undefined : "写真差し替え：" + c.name}
+                  caption={c.image ? undefined : t.photoPlaceholder(c.name)}
                   tone={TONES[i % TONES.length]}
                   className="aspect-[3/2]"
                   alt={c.name}
@@ -151,11 +156,11 @@ export default function ProgramSection({
                 <p className="text-sm text-black/60 mt-2 leading-relaxed">{c.blurb}</p>
                 <dl className="mt-4 mb-5 text-sm border-t border-black/15">
                   {[
-                    ["対象", TARGET_LABELS[c.target]?.label ?? c.target],
-                    ["ねらい", c.who],
-                    ["実施日時", c.schedule],
-                    ["形式", c.style],
-                    ["月謝", c.monthly],
+                    [t.classFields.target, TARGET_LABELS[c.target]?.label ?? c.target],
+                    [t.classFields.who, c.who],
+                    [t.classFields.schedule, c.schedule],
+                    [t.classFields.style, c.style],
+                    [t.classFields.monthly, c.monthly],
                   ]
                     .filter(([, v]) => v)
                     .map(([label, value]) => (
@@ -178,7 +183,7 @@ export default function ProgramSection({
                     href={trialHref}
                     className="mt-auto text-center font-display uppercase tracking-wide text-sm px-4 py-2.5 bg-black text-white hover:bg-gold hover:text-black transition-colors duration-150"
                   >
-                    このクラスを体験する
+                    {t.tryThisClass}
                   </a>
                 )}
               </div>
@@ -194,7 +199,7 @@ export default function ProgramSection({
               href={trialHref}
               className="mt-6 text-center font-display uppercase tracking-wide text-sm px-4 py-3 bg-gold text-black hover:bg-white transition-colors duration-150"
             >
-              無料体験に申し込む
+              {t.applyTrial}
             </a>
           </div>
         </div>

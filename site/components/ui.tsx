@@ -66,10 +66,10 @@ export function GhostButton({
   )
 }
 
-export function Logo({ src, size = 32 }: { src?: string; size?: number }) {
+export function Logo({ src, size = 32, alt = "輝蹴会 ロゴ" }: { src?: string; size?: number; alt?: string }) {
   if (src) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={src} alt="輝蹴会 ロゴ" width={size} height={size} className="shrink-0 object-contain" style={{ height: size, width: size }} />
+    return <img src={src} alt={alt} width={size} height={size} className="shrink-0 object-contain" style={{ height: size, width: size }} />
   }
   return (
     <svg viewBox="0 0 40 40" className="shrink-0" style={{ height: size, width: size }} aria-hidden="true">

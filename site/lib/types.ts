@@ -158,6 +158,17 @@ export type Content = {
     emptyText: string
     items: Tournament[]
   }
+  access: {
+    visible: boolean
+    eyebrow: string
+    title: string
+    lead: string
+    /** 表示用の住所（構造化データは lib/site-info.ts） */
+    address: string
+    stations: { name: string; line: string; walk: string }[]
+    mapLabel: string
+    note: string
+  }
   footer: {
     address: string
     tagline: string
@@ -167,13 +178,6 @@ export type Content = {
   }
 }
 
-export const TARGET_LABELS: Record<string, { label: string; en: string }> = {
-  preschool: { label: "幼児", en: "PRESCHOOL" },
-  elementary: { label: "小学生", en: "ELEMENTARY" },
-  teen: { label: "中学生〜高校生", en: "TEEN" },
-  athlete: { label: "アスリート", en: "ATHLETE" },
-  adult: { label: "大人", en: "ADULT" },
-}
 
 /** Instagramのユーザー名を正規化する（@やURLで入力されても受け付ける）。 */
 export function igUsername(raw: string | undefined): string {

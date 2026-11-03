@@ -1,11 +1,11 @@
 {
-  "contentVersion": 3,
+  "contentVersion": 4,
   "site": {
     "name": "輝蹴会",
     "nameEn": "KISHUKAI TAEKWONDO",
     "logo": "",
-    "title": "輝蹴会 | KISHUKAI TAEKWONDO ACADEMY",
-    "description": "輝蹴会は、幼児から大人まで通えるテコンドーアカデミー。火曜はキョルギ、金曜はプムセ。蹴り出す一歩が、世界へつながる。",
+    "title": "輝蹴会 | 新宿のテコンドー教室（幼児・小学生・中高生・大人）",
+    "description": "新宿区河田町のテコンドー教室「輝蹴会」。曙橋・四谷三丁目・薬王寺町エリアから通いやすく、幼児から大人まで通えます。火曜はキョルギ、金曜はプムセ。無料体験受付中。",
     "ctaLabel": "無料体験",
     "instagram": "",
     "nav": [
@@ -436,8 +436,29 @@
     "primaryLabel": "無料体験に申し込む",
     "secondaryLabel": "クラス・料金を見る"
   },
+  "access": {
+    "visible": true,
+    "eyebrow": "ACCESS",
+    "title": "アクセス",
+    "lead": "新宿区河田町の仮会場で練習しています。曙橋・四谷三丁目・薬王寺町エリアから通いやすく、千代田区・中央区からも都営新宿線（京王線直通）で乗り換えなしで通えます。",
+    "address": "〒162-0054 東京都新宿区河田町3-16 施設C棟（仮会場）",
+    "stations": [
+      {
+        "name": "曙橋駅",
+        "line": "都営新宿線（京王線直通）",
+        "walk": "徒歩◯分（要確認）"
+      },
+      {
+        "name": "若松河田駅",
+        "line": "都営大江戸線",
+        "walk": "徒歩◯分（要確認）"
+      }
+    ],
+    "mapLabel": "Googleマップで開く",
+    "note": "※ 現在は仮会場です。会場が変わる場合はInstagramとこのページでお知らせします。"
+  },
   "footer": {
-    "address": "会場・住所・電話番号（差し替え項目）",
+    "address": "〒162-0054 東京都新宿区河田町3-16 施設C棟（仮会場）",
     "tagline": "世界とつながり、豊かな人間性を育むテコンドーアカデミー",
     "copyright": "© 2026 輝蹴会 KISHUKAI",
     "columns": [

@@ -1,19 +1,23 @@
 import type { Metadata } from "next"
-import { getContent } from "@/lib/content"
+import { headers } from "next/headers"
+import { DEFAULT_LOCALE, LANGUAGE_NAMES, isLocale, siteUrl } from "@/lib/i18n"
+import { isIndexable } from "@/lib/indexing"
 import "./globals.css"
 
-export async function generateMetadata(): Promise<Metadata> {
-  const c = await getContent()
+export function generateMetadata(): Metadata {
+  const index = isIndexable()
   return {
-    title: c.site.title,
-    description: c.site.description,
-    robots: { index: false, follow: false },
+    metadataBase: new URL(siteUrl()),
+    robots: { index, follow: index },
   }
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const h = await headers()
+  const v = h.get("x-locale")
+  const locale = isLocale(v) ? v : DEFAULT_LOCALE
   return (
-    <html lang="ja">
+    <html lang={LANGUAGE_NAMES[locale].htmlLang}>
       <body>{children}</body>
     </html>
   )

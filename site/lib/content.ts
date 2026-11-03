@@ -1,6 +1,8 @@
 import { head, put } from "@vercel/blob"
 import defaults from "@/content/default.json"
+import koOverlay from "@/content/ko.json"
 import type { Content } from "./types"
+import { DEFAULT_LOCALE, type Locale } from "./i18n"
 
 const BLOB_PATH = "content/site.json"
 
@@ -17,8 +19,38 @@ export function defaultContent(): Content {
   return JSON.parse(JSON.stringify(defaults)) as Content
 }
 
-/** 保存済みコンテンツ。無ければ既定値。 */
-export async function getContent(): Promise<Content> {
+/**
+ * 表示用コンテンツ。韓国語は日本語（管理画面で保存した内容）の上に content/ko.json の訳文を重ねる。
+ * 画像・URL・表示/非表示・大会の行など訳に含めない項目は日本語版の値がそのまま使われる。
+ */
+export async function getContent(locale: Locale = DEFAULT_LOCALE): Promise<Content> {
+  const base = await getBaseContent()
+  if (locale === DEFAULT_LOCALE) return base
+  return overlayLocale(base, koOverlay) as Content
+}
+
+/**
+ * 訳文を重ねる。配列は要素数が同じなら1件ずつ重ね（写真などを日本語版から引き継ぐ）、
+ * 管理画面で件数が変わっていたら日本語版をそのまま使う（ずれた訳を出さないため）。
+ */
+function overlayLocale(base: any, over: any): any {
+  if (Array.isArray(base)) {
+    if (!Array.isArray(over) || over.length !== base.length) return base
+    return base.map((b, i) => overlayLocale(b, over[i]))
+  }
+  if (base && typeof base === "object") {
+    if (!over || typeof over !== "object") return base
+    const out: any = { ...base }
+    for (const k of Object.keys(over)) {
+      if (k in base) out[k] = overlayLocale(base[k], over[k])
+    }
+    return out
+  }
+  return typeof over === typeof base ? over : base
+}
+
+/** 保存済みコンテンツ（日本語）。無ければ既定値。 */
+async function getBaseContent(): Promise<Content> {
   if (!hasBlob()) return defaultContent()
   try {
     const meta = await head(BLOB_PATH)
@@ -90,6 +122,14 @@ const MIGRATIONS: { version: number; reset: string[][] }[] = [
       ["footer", "columns"],
     ],
   },
+  {
+    // v4: 地域SEO対応。タブのタイトル・説明文を新しい既定値に（仮置きのフッター住所は migrate() で個別に判定）
+    version: 4,
+    reset: [
+      ["site", "title"],
+      ["site", "description"],
+    ],
+  },
 ]
 
 function migrate(saved: any): any {
@@ -107,6 +147,9 @@ function migrate(saved: any): any {
       for (const key of path.slice(0, -1)) node = node?.[key]
       if (node && typeof node === "object") delete node[path[path.length - 1]]
     }
+  }
+  if (from < 4 && typeof out.footer?.address === "string" && out.footer.address.includes("差し替え")) {
+    delete out.footer.address
   }
   delete out.contentVersion // 版番号は常に既定値（最新）を使う
   return out
