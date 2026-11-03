@@ -58,7 +58,7 @@
 <rect x="432" y="578" width="170" height="44" fill="#000000"/>
 <text x="517" y="605" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">このクラスを体験する</text>
 <rect x="618" y="586" width="66" height="24" fill="#f4de1e"/>
-<text x="651" y="602" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#000000" text-anchor="middle" letter-spacing="1">KIDS</text>
+<text x="651" y="602" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#000000" text-anchor="middle" letter-spacing="1">ADULT</text>
 <rect x="696" y="586" width="96" height="24" fill="#000000"/>
 <text x="744" y="602" font-family="Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#f4de1e" text-anchor="middle">いちばん人気</text>
 <text x="40" y="644" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">角丸なし（0px）／ホバーは黒⇔金の色反転／英字ラベルはOswald・大文字</text>
@@ -68,13 +68,13 @@
 <text x="40" y="706" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">データ行（dl）</text>
 <line x1="40" y1="716" x2="510" y2="716" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
 <text x="40" y="738" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1">対象</text>
-<text x="130" y="738" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="400" fill="#111111" text-anchor="start">幼児〜小学生</text>
+<text x="130" y="738" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="400" fill="#111111" text-anchor="start">大人</text>
 <line x1="40" y1="750" x2="510" y2="750" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
-<text x="40" y="772" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1">実施日時</text>
-<text x="130" y="772" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="400" fill="#111111" text-anchor="start">月・水・金 16:30 – 17:30</text>
+<text x="40" y="772" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1">練習日</text>
+<text x="130" y="772" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="400" fill="#111111" text-anchor="start">火曜日 キョルギコース / 金曜日 プムセコース</text>
 <line x1="40" y1="784" x2="510" y2="784" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
-<text x="40" y="806" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1">月謝</text>
-<text x="130" y="806" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="400" fill="#111111" text-anchor="start">◯,◯◯◯円</text>
+<text x="40" y="806" font-family="Oswald, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#555555" text-anchor="start" letter-spacing="1">形式</text>
+<text x="130" y="806" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="400" fill="#111111" text-anchor="start">プムセ（型）コース中心</text>
 <line x1="40" y1="818" x2="510" y2="818" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
 <text x="560" y="706" font-family="Noto Sans JP, sans-serif" font-size="11" font-weight="400" fill="#777777" text-anchor="start">ヘアライングリッド（gap 1px・黒15%）</text>
 <rect x="560" y="716" width="480" height="104" fill="rgba(0,0,0,0.15)"/>

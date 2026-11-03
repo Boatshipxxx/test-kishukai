@@ -22,10 +22,11 @@ export type Section = {
 }
 
 const TARGET_OPTIONS = [
-  { value: "kids", label: "キッズ（幼児〜小学生）" },
-  { value: "junior", label: "ジュニア（小中学生）" },
-  { value: "athlete", label: "選手育成" },
-  { value: "adult", label: "大人・保護者" },
+  { value: "preschool", label: "幼児" },
+  { value: "elementary", label: "小学生" },
+  { value: "teen", label: "中学生〜高校生" },
+  { value: "athlete", label: "アスリート" },
+  { value: "adult", label: "大人" },
 ]
 
 export const SCHEMA: Section[] = [
@@ -210,6 +211,7 @@ export const SCHEMA: Section[] = [
       { key: "eyebrow", label: "小見出し（英字）", type: "text" },
       { key: "title", label: "見出し", type: "text" },
       { key: "lead", label: "リード文", type: "textarea" },
+      { key: "discountNote", label: "割引などのお知らせ（料金の直下に強調表示）", type: "textarea", hint: "空欄にすると非表示" },
       { key: "showDetails", label: "入会金などの明細表を表示", type: "boolean" },
       { key: "note", label: "注記", type: "textarea" },
     ],
@@ -399,6 +401,35 @@ export const SCHEMA: Section[] = [
       { key: "lead", label: "本文", type: "textarea" },
       { key: "primaryLabel", label: "ボタン（黄色）", type: "text" },
       { key: "secondaryLabel", label: "ボタン（枠線）", type: "text" },
+    ],
+  },
+  {
+    key: "tournaments",
+    label: "大会情報一覧（/tournaments）",
+    icon: "tournaments",
+    toggle: true,
+    fields: [
+      { key: "eyebrow", label: "小見出し（英字）", type: "text" },
+      { key: "title", label: "見出し", type: "text" },
+      { key: "lead", label: "リード文", type: "textarea" },
+      { key: "note", label: "注記", type: "textarea" },
+      { key: "emptyText", label: "大会が0件のときの表示", type: "text" },
+    ],
+    lists: [
+      {
+        key: "items",
+        label: "大会",
+        itemLabel: "大会",
+        titleKey: "name",
+        max: 100,
+        fields: [
+          { key: "date", label: "開催日程", type: "text", hint: "例: 2027年1月10日（日）／ 2027年2月11日〜12日" },
+          { key: "name", label: "大会名", type: "text" },
+          { key: "venue", label: "会場", type: "text", hint: "例: 東京都 ◯◯体育館" },
+          { key: "age", label: "対象年齢", type: "text", hint: "例: 小学生〜高校生" },
+          { key: "url", label: "詳細（URL）", type: "text", hint: "https:// から始まる外部URLのみ。空欄なら「-」と表示されます" },
+        ],
+      },
     ],
   },
   {

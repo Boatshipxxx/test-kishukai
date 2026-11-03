@@ -233,7 +233,7 @@ ABOUT = head(
         <div class="card">
           <p class="kanji">守</p>
           <h3>安全を最優先に</h3>
-          <p>キッズ・ジュニアは型（プムセ）とミット打ちが中心の非接触カリキュラム。対人練習は選手育成クラスで、防具を完全着用したうえで行います。</p>
+          <p>幼児・小学生クラスは型（プムセ）とミット打ちが中心の非接触カリキュラム。対人練習（キョルギ）は、防具を完全着用したうえで行います。</p>
         </div>
       </div>
     </div>
@@ -257,7 +257,7 @@ ABOUT = head(
           <p class="av">指</p>
           <h3>指導者名（差し替え）</h3>
           <p class="role">指導員 / 段位</p>
-          <p>担当クラスと得意分野（キッズ指導・アクロバット等）を記載。子どもとの関わり方が伝わる一文を添えます。</p>
+          <p>担当クラスと得意分野（幼児指導・プムセ等）を記載。子どもとの関わり方が伝わる一文を添えます。</p>
         </div>
         <div class="person">
           <p class="av">補</p>
@@ -470,39 +470,39 @@ PROGRAMS = head(
       </div>
       <div class="prog-grid">
         <div class="prog">
-          <span class="level">Kids</span>
-          <h3>キッズ・デベロップメント</h3>
+          <span class="level">Preschool</span>
+          <h3>幼児</h3>
           <p class="who">運動神経の土台づくりと礼儀作法</p>
           <p>コーディネーショントレーニングとテコンドーを組み合わせ、走る・跳ぶ・バランスをとる力を養います。挨拶と礼から始めるので、はじめての習い事にも向いています。</p>
-          <p class="meta"><span>幼児〜小学生</span><span>週1〜</span><span>非接触</span></p>
+          <p class="meta"><span>幼児</span><span>非接触</span></p>
         </div>
         <div class="prog">
-          <span class="level">Junior</span>
-          <h3>ベーシック・テクニック</h3>
+          <span class="level">Elementary</span>
+          <h3>小学生</h3>
           <p class="who">基礎習得・姿勢改善・柔軟性向上</p>
           <p>基本の立ち方、ストレッチ、正確な蹴りのフォーム、基本の型（プムセ）。上達の軸になるクラスで、昇級審査の課題もここで仕上げます。</p>
-          <p class="meta"><span>小中学生</span><span>週1〜2</span><span>非接触</span></p>
+          <p class="meta"><span>小学生</span><span>非接触</span></p>
         </div>
         <div class="prog">
-          <span class="level">Junior+</span>
-          <h3>アクロバット・キック</h3>
-          <p class="who">カッコいい蹴りを跳びたい君へ</p>
-          <p>540度キックや跳び蹴り、トリッキングなど、テコンドーならではの華麗な足技に特化。基礎クラスと併せて受講するのがおすすめです。</p>
-          <p class="meta"><span>小中学生</span><span>週1</span><span>マット使用</span></p>
+          <span class="level">Junior &amp; High</span>
+          <h3>中学生〜高校生</h3>
+          <p class="who">技術の向上と心身の成長</p>
+          <p>基礎を固めながら、より高い蹴り技と型（プムセ）の完成度を目指します。部活や勉強と両立しながら、自分のペースで段位を目指せます。</p>
+          <p class="meta"><span>中学生〜高校生</span></p>
         </div>
         <div class="prog">
           <span class="level">Athlete</span>
-          <h3>選手育成クラス</h3>
+          <h3>アスリート（韓国留学サポート）</h3>
           <p class="who">世界を目指す競技志向の選手に</p>
-          <p>防具を完全着用したライトコンタクトの対人練習と、競技ルールに基づくトレーニング。国内大会から世界の舞台までを見据えます。指導者の推薦制です。</p>
-          <p class="meta"><span>小中学生</span><span>週2〜</span><span>防具着用</span></p>
+          <p>防具を完全着用したライトコンタクトの対人練習と、競技ルールに基づくトレーニング。国内大会から世界の舞台までを見据え、本場・韓国への留学もサポートします。指導者の推薦制です。</p>
+          <p class="meta"><span>競技志向</span><span>防具着用</span><span>韓国留学サポート</span></p>
         </div>
         <div class="prog" style="grid-column:1/-1">
           <span class="level">Adult</span>
-          <h3>カーディオ・テコンドー</h3>
-          <p class="who">お子さまと一緒に、健康づくりとストレス発散</p>
-          <p>音楽に合わせてステップと蹴りを続ける非接触の有酸素クラス。体幹強化・柔軟性向上・ヒップアップに効果的で、対人練習はありません。お子さまのレッスンを待つ時間が、そのままご自身の運動時間になります。</p>
-          <p class="meta"><span>高校生以上</span><span>週1〜</span><span>非接触</span></p>
+          <h3>大人</h3>
+          <p class="who">30代〜60代まで幅広く参加できます</p>
+          <p>プムセ（型）コース中心で、30代〜60代まで幅広く参加できます。運動経験がなくても、自分のペースで始められます。</p>
+          <p class="meta"><span>火曜日 キョルギコース</span><span>金曜日 プムセコース</span></p>
         </div>
       </div>
     </div>
@@ -512,35 +512,17 @@ PROGRAMS = head(
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Schedule</p>
-        <h2>週間スケジュール</h2>
-        <p class="note">※ 曜日・時間・会場は差し替え項目です。確定スケジュールに置き換えます。</p>
+        <h2>開催曜日</h2>
+        <p class="note">※ 正しいスケジュールはInstagramをご確認ください。</p>
       </div>
       <div class="table-wrap">
         <table class="tbl">
           <thead>
-            <tr><th>時間</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>
+            <tr><th>曜日</th><th>コース</th><th>内容</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row" class="num">16:30 — 17:30</th>
-              <td>キッズ</td><td>—</td><td>キッズ</td><td>—</td><td>キッズ</td><td>—</td>
-            </tr>
-            <tr>
-              <th scope="row" class="num">17:40 — 18:50</th>
-              <td>ベーシック</td><td>アクロバット</td><td>ベーシック</td><td>—</td><td>ベーシック</td><td>—</td>
-            </tr>
-            <tr>
-              <th scope="row" class="num">19:00 — 20:10</th>
-              <td>選手育成</td><td>カーディオ</td><td>選手育成</td><td>—</td><td>選手育成</td><td>—</td>
-            </tr>
-            <tr>
-              <th scope="row" class="num">10:00 — 11:10</th>
-              <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>キッズ／ベーシック</td>
-            </tr>
-            <tr>
-              <th scope="row" class="num">11:20 — 12:40</th>
-              <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>選手育成（合同）</td>
-            </tr>
+            <tr><th scope="row">火曜日</th><td>キョルギコース</td><td>組手（対人練習）</td></tr>
+            <tr><th scope="row">金曜日</th><td>プムセコース</td><td>型（プムセ）</td></tr>
           </tbody>
         </table>
       </div>
@@ -552,43 +534,38 @@ PROGRAMS = head(
       <div class="section-head">
         <p class="eyebrow">Pricing</p>
         <h2>料金プラン</h2>
-        <p>通う回数で選ぶ3つのプラン。プラン内であればクラスは自由に組み合わせられます。</p>
+        <p>通う回数で選べる2つのプラン。プラン内であればクラスは自由に組み合わせられます。</p>
       </div>
-      <div class="plans" style="margin-top:0">
-        <div class="plan">
-          <h3>ライト</h3>
-          <p class="price">月4回<small>／月額</small></p>
-          <p>習い事の掛け持ちや、まずは無理なく始めたい方に。週1回ペースでじっくり進めます。</p>
-        </div>
+      <div class="plans two" style="margin-top:0">
         <div class="plan featured">
           <span class="flag">いちばん人気</span>
           <h3>レギュラー</h3>
-          <p class="price">通い放題<small>／月額</small></p>
-          <p>スケジュールから好きなクラスを選んで通い放題。上達がいちばん早い主力プランです。</p>
+          <p class="price">12,000円<small> / 月</small></p>
+          <p>回数の上限なく通えるプラン。上達がいちばん早い主力プランです。</p>
         </div>
         <div class="plan">
-          <h3>プレミアム</h3>
-          <p class="price">通い放題＋<small>パーソナル</small></p>
-          <p>通い放題に加え、月数回のパーソナル指導（フォームチェック・ミット）付き。選手志向の方に。</p>
+          <h3>月4回まで</h3>
+          <p class="price">10,000円<small> / 月</small></p>
+          <p>週1回ペースで通いたい方や、習い事の掛け持ちに。</p>
         </div>
       </div>
+      <p class="plan-discount">家族、紹介割引があります。お問い合わせ下さい。</p>
 
       <div class="table-wrap" style="margin-top:36px">
         <table class="tbl">
           <thead>
-            <tr><th>項目</th><th>ライト</th><th>レギュラー</th><th>プレミアム</th></tr>
+            <tr><th>項目</th><th>レギュラー</th><th>月4回まで</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">月謝</th><td class="num">◯,◯◯◯円</td><td class="num em">◯,◯◯◯円</td><td class="num">◯,◯◯◯円</td></tr>
-            <tr><th scope="row">通える回数</th><td>月4回</td><td>通い放題</td><td>通い放題</td></tr>
-            <tr><th scope="row">パーソナル指導</th><td>—</td><td>—</td><td>月◯回</td></tr>
-            <tr><th scope="row">入会金</th><td colspan="3" class="num">◯,◯◯◯円（兄弟姉妹は2人目以降◯％割引）</td></tr>
-            <tr><th scope="row">年会費・保険</th><td colspan="3" class="num">◯,◯◯◯円／年（スポーツ保険を含む）</td></tr>
-            <tr><th scope="row">道着・防具</th><td colspan="3">入会後しばらくはレンタルで開始可。昇級に応じて必要な用具をご案内します。</td></tr>
+            <tr><th scope="row">月謝</th><td class="num em">12,000円 / 月</td><td class="num">10,000円 / 月</td></tr>
+            <tr><th scope="row">通える回数</th><td>上限なし</td><td>月4回まで</td></tr>
+            <tr><th scope="row">入会金</th><td colspan="2" class="num">◯,◯◯◯円</td></tr>
+            <tr><th scope="row">年会費・保険</th><td colspan="2" class="num">◯,◯◯◯円／年（スポーツ保険を含む）</td></tr>
+            <tr><th scope="row">道着・防具</th><td colspan="2">入会後しばらくはレンタルで開始可。昇級に応じて必要な用具をご案内します。</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="note">※ 金額はすべて差し替え項目です。確定額に置き換えます。</p>
+      <p class="note">※ 入会金・年会費は差し替え項目です。確定額に置き換えます。</p>
     </div>
   </section>
 
@@ -666,15 +643,15 @@ PROGRAMS = head(
         </details>
         <details>
           <summary>月謝のほかにかかる費用を教えてください。</summary>
-          <p class="a">入会金、年会費（スポーツ保険を含む）、道着代、昇級審査料が別途かかります。防具は選手育成クラスに進む段階で必要になり、それまではレンタルで対応できます。</p>
+          <p class="a">入会金、年会費（スポーツ保険を含む）、道着代、昇級審査料が別途かかります。防具はアスリートクラスに進む段階で必要になり、それまではレンタルで対応できます。</p>
         </details>
         <details>
-          <summary>兄弟姉妹で通う場合の割引はありますか？</summary>
-          <p class="a">2人目以降の月謝を割引しています。割引率は差し替え項目です。ご家族での参加を歓迎しています。</p>
+          <summary>家族で通う場合の割引はありますか？</summary>
+          <p class="a">家族、紹介割引があります。お問い合わせ下さい。ご家族での参加を歓迎しています。</p>
         </details>
         <details>
           <summary>休んだ分の振替はできますか？</summary>
-          <p class="a">レギュラー・プレミアムのプランは通い放題のため、別日のクラスにそのまま参加できます。ライトプランは同月内での振替に対応します。</p>
+          <p class="a">レギュラープランは回数の上限がないため、別日のクラスにそのまま参加できます。月4回までプランは同月内での振替に対応します。</p>
         </details>
       </div>
     </div>
@@ -725,11 +702,6 @@ NEWS = head(
           <time datetime="2026-06-28">2026.06.28</time>
           <span class="cat">地域活動</span>
           <a href="supporter.html">地域スポーツ体験会にブース出展しました — 活動実績を更新</a>
-        </li>
-        <li>
-          <time datetime="2026-06-14">2026.06.14</time>
-          <span class="cat">お知らせ</span>
-          <a href="programs.html">アクロバット・キッククラスを新設しました</a>
         </li>
         <li>
           <time datetime="2026-05-30">2026.05.30</time>
@@ -1001,11 +973,11 @@ TRIAL = head(
               <label for="klass">ご希望のクラス</label>
               <select id="klass" name="klass">
                 <option>未定（当日ご提案ください）</option>
-                <option>キッズ（幼児〜小学生）</option>
-                <option>ベーシック（小中学生）</option>
-                <option>アクロバット（小中学生）</option>
-                <option>選手育成</option>
-                <option>カーディオ（大人）</option>
+                <option>幼児</option>
+                <option>小学生</option>
+                <option>中学生〜高校生</option>
+                <option>アスリート（韓国留学サポート）</option>
+                <option>大人</option>
               </select>
             </div>
           </div>
@@ -1066,7 +1038,7 @@ TRIAL = head(
         </details>
         <details>
           <summary>ケガが心配です。組手（対人練習）はありますか？</summary>
-          <p class="a">キッズ・ジュニアクラスは型（プムセ）とミット練習が中心の非接触カリキュラムです。対人練習は選手育成クラスのみで、防具を完全着用したライトコンタクトに限定しています。体験で対人練習を行うことはありません。</p>
+          <p class="a">幼児・小学生クラスは型（プムセ）とミット練習が中心の非接触カリキュラムです。対人練習は防具を完全着用したライトコンタクトに限定しています。体験で対人練習を行うことはありません。</p>
         </details>
         <details>
           <summary>兄弟や友だちと一緒に体験できますか？</summary>
@@ -1074,7 +1046,7 @@ TRIAL = head(
         </details>
         <details>
           <summary>保護者も一緒に運動できますか？</summary>
-          <p class="a">大人向けのカーディオ・テコンドークラスがあります。お子さまと同じ日程での体験もご相談ください。</p>
+          <p class="a">大人クラスがあります。プムセ（型）コース中心で、30代〜60代まで幅広く参加できます。お子さまと同じ日程での体験もご相談ください。</p>
         </details>
       </div>
     </div>
@@ -1109,7 +1081,7 @@ PAGES = [
     ("world.html", "世界への挑戦 | 輝蹴会",
      "世界テコンドー文化エキスポ（韓国・茂朱）への遠征レポート。国際交流のエピソード、遠征の記録、保護者の声。", WORLD, ""),
     ("programs.html", "クラス・料金案内 | 輝蹴会",
-     "輝蹴会のクラス編成と料金。キッズから選手育成、大人向けカーディオまで。週間スケジュール、料金プラン、昇級のしくみ、入会までの流れ。", PROGRAMS, ""),
+     "輝蹴会のクラス編成と料金。幼児・小学生・中学生〜高校生・アスリート（韓国留学サポート）・大人の5クラス。開催曜日、料金プラン（レギュラー／月4回まで）、昇級のしくみ、入会までの流れ。", PROGRAMS, ""),
     ("news.html", "お知らせ | 輝蹴会",
      "輝蹴会からのお知らせ。遠征レポート、試合結果、スケジュール、地域活動の報告。", NEWS, ""),
     ("supporter.html", "輝蹴会サポーター | 輝蹴会",
