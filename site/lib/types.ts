@@ -1,5 +1,19 @@
 export type Img = string
 
+/** 大会一覧の1行。詳細は外部URLのみ（http/https 以外はリンクにしない） */
+export type Tournament = {
+  /** 開催日程 */
+  date: string
+  /** 大会名 */
+  name: string
+  /** 会場 */
+  venue: string
+  /** 対象年齢 */
+  age: string
+  /** 詳細（外部URL） */
+  url: string
+}
+
 export type Content = {
   /** 既定コンテンツの版。保存済みデータの移行判定に使う（lib/content.ts） */
   contentVersion: number
@@ -135,6 +149,15 @@ export type Content = {
     primaryLabel: string
     secondaryLabel: string
   }
+  tournaments: {
+    visible: boolean
+    eyebrow: string
+    title: string
+    lead: string
+    note: string
+    emptyText: string
+    items: Tournament[]
+  }
   footer: {
     address: string
     tagline: string
@@ -159,4 +182,16 @@ export function igUsername(raw: string | undefined): string {
     .replace(/^https?:\/\/(www\.)?instagram\.com\//i, "")
     .replace(/^@/, "")
     .replace(/[/?#].*$/, "")
+}
+
+/** 外部リンクとして安全に出せるURLだけを返す（http/https 以外は空文字）。 */
+export function safeExternalUrl(raw: string | undefined): string {
+  const v = (raw ?? "").trim()
+  if (!v) return ""
+  try {
+    const u = new URL(v)
+    return u.protocol === "https:" || u.protocol === "http:" ? u.toString() : ""
+  } catch {
+    return ""
+  }
 }

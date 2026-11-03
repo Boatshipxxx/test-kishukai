@@ -404,6 +404,35 @@ export const SCHEMA: Section[] = [
     ],
   },
   {
+    key: "tournaments",
+    label: "大会情報一覧（/tournaments）",
+    icon: "tournaments",
+    toggle: true,
+    fields: [
+      { key: "eyebrow", label: "小見出し（英字）", type: "text" },
+      { key: "title", label: "見出し", type: "text" },
+      { key: "lead", label: "リード文", type: "textarea" },
+      { key: "note", label: "注記", type: "textarea" },
+      { key: "emptyText", label: "大会が0件のときの表示", type: "text" },
+    ],
+    lists: [
+      {
+        key: "items",
+        label: "大会",
+        itemLabel: "大会",
+        titleKey: "name",
+        max: 100,
+        fields: [
+          { key: "date", label: "開催日程", type: "text", hint: "例: 2027年1月10日（日）／ 2027年2月11日〜12日" },
+          { key: "name", label: "大会名", type: "text" },
+          { key: "venue", label: "会場", type: "text", hint: "例: 東京都 ◯◯体育館" },
+          { key: "age", label: "対象年齢", type: "text", hint: "例: 小学生〜高校生" },
+          { key: "url", label: "詳細（URL）", type: "text", hint: "https:// から始まる外部URLのみ。空欄なら「-」と表示されます" },
+        ],
+      },
+    ],
+  },
+  {
     key: "footer",
     label: "フッター",
     icon: "footer",

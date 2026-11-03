@@ -1,5 +1,5 @@
 {
-  "contentVersion": 2,
+  "contentVersion": 3,
   "site": {
     "name": "輝蹴会",
     "nameEn": "KISHUKAI TAEKWONDO",
@@ -24,6 +24,10 @@
       {
         "label": "PRICE",
         "href": "#price"
+      },
+      {
+        "label": "TOURNAMENT",
+        "href": "/tournaments"
       },
       {
         "label": "NEWS",
@@ -489,6 +493,7 @@
           "お問い合わせ",
           "アクセス",
           "お知らせ",
+          "大会情報",
           "現行サイト"
         ]
       }
@@ -498,6 +503,23 @@
       "X",
       "YT",
       "LINE"
+    ]
+  },
+  "tournaments": {
+    "visible": true,
+    "eyebrow": "TOURNAMENT",
+    "title": "日本国内のテコンドー大会情報一覧",
+    "lead": "国内で開催されるテコンドー大会の日程です。出場を検討している大会があれば、指導者にご相談ください。",
+    "note": "※ 日程・会場・対象年齢は変更になる場合があります。最新情報は各大会の詳細ページをご確認ください。",
+    "emptyText": "現在掲載中の大会はありません。",
+    "items": [
+      {
+        "date": "◯年◯月◯日（差し替え）",
+        "name": "◯◯テコンドー選手権大会（差し替え）",
+        "venue": "◯◯県 ◯◯体育館（差し替え）",
+        "age": "小学生〜一般（差し替え）",
+        "url": ""
+      }
     ]
   }
 }

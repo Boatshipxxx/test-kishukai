@@ -95,6 +95,11 @@ const MIGRATIONS: { version: number; reset: string[][] }[] = [
 function migrate(saved: any): any {
   const from = Number(saved?.contentVersion ?? 1)
   const out = JSON.parse(JSON.stringify(saved ?? {}))
+  // v3: 大会情報ページを追加。保存済みのメニューに無ければ NEWS の前に差し込む（他の編集は保持）
+  if (from < 3 && Array.isArray(out.site?.nav) && !out.site.nav.some((n: any) => n?.href === "/tournaments")) {
+    const i = out.site.nav.findIndex((n: any) => n?.label === "NEWS")
+    out.site.nav.splice(i < 0 ? out.site.nav.length : i, 0, { label: "TOURNAMENT", href: "/tournaments" })
+  }
   for (const m of MIGRATIONS) {
     if (from >= m.version) continue
     for (const path of m.reset) {
