@@ -150,7 +150,7 @@ def build_guide():
     g.text(x + 85, y + 27, "このクラスを体験する", 12, 700, "#ffffff", BODY, anchor="middle")
     x += 186
     g.rect(x, y + 8, 66, 24, GOLD)
-    g.text(x + 33, y + 24, "KIDS", 11, 700, INK, DISPLAY, ls="1", anchor="middle")
+    g.text(x + 33, y + 24, "ADULT", 11, 700, INK, DISPLAY, ls="1", anchor="middle")
     x += 78
     g.rect(x, y + 8, 96, 24, INK)
     g.text(x + 48, y + 24, "いちばん人気", 10, 700, GOLD, BODY, anchor="middle")
@@ -165,7 +165,7 @@ def build_guide():
     # dl行
     dlx, dlw = PAD, 470
     g.text(dlx, y + 12, "データ行（dl）", 11, 400, "#777777")
-    for i, (k, v) in enumerate([("対象", "幼児〜小学生"), ("実施日時", "月・水・金 16:30 – 17:30"), ("月謝", "◯,◯◯◯円")]):
+    for i, (k, v) in enumerate([("対象", "大人"), ("練習日", "火曜日 キョルギコース / 金曜日 プムセコース"), ("形式", "プムセ（型）コース中心")]):
         ry = y + 22 + i * 34
         g.parts.append(f'<line x1="{dlx}" y1="{ry}" x2="{dlx + dlw}" y2="{ry}" stroke="{LINE}" stroke-width="1"/>')
         g.text(dlx, ry + 22, k, 11, 700, "#555555", DISPLAY, ls="1")

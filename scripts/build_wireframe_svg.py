@@ -225,16 +225,17 @@ def sk_cta(b, x, y, w):
 
 
 def sk_plans(b, x, y, w):
+    """料金プラン×2（レギュラー★／月4回まで）＋割引案内の1行。"""
     gap = 6
-    cw = (w - gap * 2) / 3
-    b.bar(x, y, cw, 46, BAR, rx=8)
-    b.bar(x + cw + gap, y, cw, 46, BARD, rx=8)
-    b.bar(x + (cw + gap) * 2, y, cw, 46, BAR, rx=8)
-    return 46
+    cw = (w - gap) / 2
+    b.bar(x, y, cw, 46, BARD, rx=8)
+    b.bar(x + cw + gap, y, cw, 46, BAR, rx=8)
+    b.bar(x + w * 0.15, y + 54, w * 0.7, 8)
+    return 62
 
 
 def sk_filter(b, x, y, w):
-    labels = ["ALL", "KIDS", "JUNIOR", "ATHLETE", "ADULT"]
+    labels = ["ALL", "PRE", "ELEM", "TEEN", "ATHLETE", "ADULT"]
     cx = x
     for s in labels:
         bw = 8.4 * len(s) + 22
@@ -255,9 +256,9 @@ def board_b_inventory():
             ["写真4枚＋遠征データ表5行は重い。写真1＋引用＋リンクの帯へ。", "差別化の核なので削除はしない。"])
     b.block("6. クラスの絞り込みフィルタ", "cut", sk_filter, ["全5クラスに絞り込みは過剰。一覧で見渡せる。"])
     b.block("7. クラスカード×5＋体験誘導", "shrink", sk_imggrid(3, 46),
-            ["カード内の明細5行（対象/ねらい/日時/形式/月謝）→ 3行に。"])
-    b.block("8. 料金プラン×3", "keep", sk_plans, ["ライト／レギュラー／プレミアム。入会判断の必須情報。"])
-    b.block("9. 料金明細（入会金・年会費・道着）", "cut", sk_rows(3), ["TOPでは3プランまで。明細は体験時案内／下層へ。"])
+            ["カード内の明細（対象/ねらい/練習日/形式）→ 3行に。"])
+    b.block("8. 料金プラン×2＋割引案内", "keep", sk_plans, ["レギュラー（12,000円）／月4回まで（10,000円）。入会判断の必須情報。", "プラン下に「家族、紹介割引」の案内1行。"])
+    b.block("9. 料金明細（入会金・年会費・道着）", "cut", sk_rows(3), ["TOPでは2プラン＋割引案内まで。明細は体験時案内／下層へ。"])
     b.block("10. 五大精神と「情」", "cut", sk_grid(5, 30), ["理念は「3つの約束」の情カードで代替し、詳細は下層へ。"])
     b.block("11. よくあるご質問×4", "cut", sk_rows(4), ["体験申込ページ側に移動。TOPの縦長化の主因。"])
     b.block("12. お知らせ×4", "cut", sk_rows(3), ["更新運用が決まるまで非表示。※要確認"])
@@ -275,8 +276,8 @@ def board_b_slim1():
     b.block("1. ヒーロー", None, sk_hero(True), dark="#2b2b2b")
     b.block("2. 保護者への3つの約束（安・世・情）", None, sk_grid(3, 44))
     b.block("3. クラス一覧（簡略カード×5）", None, sk_imggrid(3, 44, rows=2, second_dashed=True),
-            ["カード明細は 対象／日時／形式 の3行まで"])
-    b.block("4. 料金プラン×3（明細なし）", None, sk_plans)
+            ["カード明細は 対象／練習日／形式 の3行まで"])
+    b.block("4. 料金プラン×2＋割引案内（明細なし）", None, sk_plans)
     b.block("5. CTA（無料体験）＋協賛1行", None, sk_cta, dark="#2b2b2b")
     b.block("フッター（3カラム）", None, sk_grid(3, 24))
     return b.svg()
@@ -293,7 +294,7 @@ def board_b_slim2():
             ["写真1枚＋引用1文＋リンクのみ。データ表・ギャラリーは下層へ"], dark="#2b2b2b")
     b.block("4. クラス一覧（簡略カード×5）", None, sk_imggrid(3, 44, rows=2, second_dashed=True),
             ["フィルタなし・カード明細は3行まで"])
-    b.block("5. 料金プラン×3（明細なし）", None, sk_plans)
+    b.block("5. 料金プラン×2＋割引案内（明細なし）", None, sk_plans)
     b.block("協賛バナー（1行）", None, sk_banner, dark="#f3e08a")
     b.block("6. CTA（START YOUR FIRST KICK）", None, sk_cta, dark="#2b2b2b")
     b.block("フッター（3カラム）", None, sk_grid(3, 24))
@@ -312,7 +313,7 @@ def board_a_inventory():
     b.block("5. 私たちの理念（五大精神＋情）", "cut", sk_grid(5, 30),
             ["下層「私たちの理念」ページが既にある。TOPは約束の情カードで代替。"])
     b.block("6. クラスカード×5", "shrink", sk_grid(3, 46, rx=8), ["カード内の説明文を1行に。詳細は下層へ。"])
-    b.block("7. 料金プラン×3", "keep", sk_plans, ["入会判断の必須情報。注記1行のみ添える。"])
+    b.block("7. 料金プラン×2＋割引案内", "keep", sk_plans, ["入会判断の必須情報。割引案内1行のみ添える。"])
     b.block("8. よくあるご質問×4", "cut", sk_rows(4), ["体験申込ページ（trial）に同内容があるため重複。"])
     b.block("9. お知らせ×3", "cut", sk_rows(3), ["更新運用が決まるまで非表示。※要確認"])
     b.block("10. サポーター（協賛）", "shrink", sk_banner, ["濃紺の大セクション → CTA上の1行バナーへ。"])
@@ -329,7 +330,7 @@ def board_a_slim():
     b.block("2. 保護者への3つの約束（安・世・情）", None, sk_grid(3, 44, rx=8))
     b.block("3. 世界への挑戦（帯に圧縮）", None, sk_imgtext, dark="#2e3a57")
     b.block("4. クラス一覧（簡略カード×5）", None, sk_grid(3, 44, rows=2, rx=8, second_dashed=True))
-    b.block("5. 料金プラン×3（明細なし）", None, sk_plans)
+    b.block("5. 料金プラン×2＋割引案内（明細なし）", None, sk_plans)
     b.block("協賛バナー（1行）", None, sk_banner, dark="#f3e08a")
     b.block("6. CTA（まずは、無料体験から。）", None, sk_cta, dark="#b8474a")
     b.block("フッター（3カラム）", None, sk_grid(3, 24))

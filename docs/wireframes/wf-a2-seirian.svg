@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="460" height="1034" viewBox="0 0 460 1034">
-<rect id="背景" width="460" height="1034" fill="#f4f4f2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="1050" viewBox="0 0 460 1050">
+<rect id="背景" width="460" height="1050" fill="#f4f4f2"/>
 <g id="タイトル">
 <text x="20" y="35" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="17" font-weight="700" fill="#1a1a1a" text-anchor="start">案A 整理案（6ブロック）</text>
 <text x="20" y="56" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10.5" font-weight="400" fill="#666666" text-anchor="start">案B整理案②と同じ情報設計に揃えた削減版。</text>
@@ -54,31 +54,31 @@
 <rect x="333" y="631" width="60" height="18" rx="0" fill="#111111"/>
 <text x="363" y="644" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">体験へ</text>
 </g>
-<g id="5. 料金プラン×3（明細なし）">
-<rect x="20" y="684" width="420" height="92" fill="#ffffff" stroke="#222222" stroke-width="1.5"/>
-<text x="34" y="708" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#444444" text-anchor="start">5. 料金プラン×3（明細なし）</text>
-<rect x="34" y="718" width="127" height="46" rx="8" fill="#d9d9d9"/>
-<rect x="167" y="718" width="127" height="46" rx="8" fill="#9a9a9a"/>
-<rect x="299" y="718" width="127" height="46" rx="8" fill="#d9d9d9"/>
+<g id="5. 料金プラン×2＋割引案内（明細なし）">
+<rect x="20" y="684" width="420" height="108" fill="#ffffff" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="708" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#444444" text-anchor="start">5. 料金プラン×2＋割引案内（明細なし）</text>
+<rect x="34" y="718" width="193" height="46" rx="8" fill="#9a9a9a"/>
+<rect x="233" y="718" width="193" height="46" rx="8" fill="#d9d9d9"/>
+<rect x="93" y="772" width="274" height="8" rx="4" fill="#d9d9d9"/>
 </g>
 <g id="協賛バナー（1行）">
-<rect x="20" y="786" width="420" height="68" fill="#f3e08a" stroke="#222222" stroke-width="1.5"/>
-<text x="34" y="810" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#5c4800" text-anchor="start">協賛バナー（1行）</text>
-<rect x="34" y="824" width="272" height="8" rx="4" fill="#d9d9d9"/>
-<rect x="316" y="818" width="110" height="20" rx="0" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
-<text x="371" y="832" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#111111" text-anchor="middle">協賛のご相談</text>
+<rect x="20" y="802" width="420" height="68" fill="#f3e08a" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="826" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#5c4800" text-anchor="start">協賛バナー（1行）</text>
+<rect x="34" y="840" width="272" height="8" rx="4" fill="#d9d9d9"/>
+<rect x="316" y="834" width="110" height="20" rx="0" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="371" y="848" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#111111" text-anchor="middle">協賛のご相談</text>
 </g>
 <g id="6. CTA（まずは、無料体験から。）">
-<rect x="20" y="864" width="420" height="70" fill="#b8474a" stroke="#222222" stroke-width="1.5"/>
-<text x="34" y="888" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#e8c988" text-anchor="start">6. CTA（まずは、無料体験から。）</text>
-<rect x="160" y="898" width="140" height="22" rx="0" fill="#111111"/>
-<text x="230" y="912" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">無料体験に申し込む</text>
+<rect x="20" y="880" width="420" height="70" fill="#b8474a" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="904" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#e8c988" text-anchor="start">6. CTA（まずは、無料体験から。）</text>
+<rect x="160" y="914" width="140" height="22" rx="0" fill="#111111"/>
+<text x="230" y="928" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">無料体験に申し込む</text>
 </g>
 <g id="フッター（3カラム）">
-<rect x="20" y="944" width="420" height="70" fill="#ffffff" stroke="#222222" stroke-width="1.5"/>
-<text x="34" y="968" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#444444" text-anchor="start">フッター（3カラム）</text>
-<rect x="34" y="978" width="127" height="24" rx="0" fill="#d9d9d9"/>
-<rect x="167" y="978" width="127" height="24" rx="0" fill="#d9d9d9"/>
-<rect x="299" y="978" width="127" height="24" rx="0" fill="#d9d9d9"/>
+<rect x="20" y="960" width="420" height="70" fill="#ffffff" stroke="#222222" stroke-width="1.5"/>
+<text x="34" y="984" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" font-weight="700" fill="#444444" text-anchor="start">フッター（3カラム）</text>
+<rect x="34" y="994" width="127" height="24" rx="0" fill="#d9d9d9"/>
+<rect x="167" y="994" width="127" height="24" rx="0" fill="#d9d9d9"/>
+<rect x="299" y="994" width="127" height="24" rx="0" fill="#d9d9d9"/>
 </g>
 </svg>

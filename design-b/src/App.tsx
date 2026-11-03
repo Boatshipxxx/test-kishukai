@@ -6,16 +6,16 @@ import { useMemo, useState } from "react"
    内容はデザイン案A（静的HTML版）と同一の情報設計に準拠
    ========================================================= */
 
-type Target = "kids" | "junior" | "athlete" | "adult"
+type Target = "preschool" | "elementary" | "teen" | "athlete" | "adult"
 
 type DojoClass = {
   name: string
   english: string
   target: Target
   who: string
+  /** 練習日。未確定のクラスは空文字（カードに行を出さない） */
   schedule: string
   style: string
-  monthly: string
   blurb: string
   tone: "navy" | "blood" | "gold"
 }
@@ -27,71 +27,67 @@ type TargetDef = {
 }
 
 const TARGETS: TargetDef[] = [
-  { id: "kids", label: "幼児〜小学生", en: "KIDS" },
-  { id: "junior", label: "小中学生", en: "JUNIOR" },
-  { id: "athlete", label: "選手育成", en: "ATHLETE" },
-  { id: "adult", label: "大人・保護者", en: "ADULT" },
+  { id: "preschool", label: "幼児", en: "PRESCHOOL" },
+  { id: "elementary", label: "小学生", en: "ELEMENTARY" },
+  { id: "teen", label: "中学生〜高校生", en: "JUNIOR & HIGH" },
+  { id: "athlete", label: "アスリート", en: "ATHLETE" },
+  { id: "adult", label: "大人", en: "ADULT" },
 ]
 
 const CLASSES: DojoClass[] = [
   {
-    name: "キッズ・デベロップメント",
-    english: "KIDS DEVELOPMENT",
-    target: "kids",
+    name: "幼児",
+    english: "PRESCHOOL",
+    target: "preschool",
     who: "運動神経の土台づくりと礼儀作法",
-    schedule: "月・水・金 16:30 – 17:30",
+    schedule: "",
     style: "非接触",
-    monthly: "◯,◯◯◯円",
     blurb:
       "コーディネーショントレーニングとテコンドーを組み合わせ、走る・跳ぶ・バランスをとる力を養います。挨拶と礼から始めるので、はじめての習い事にも。",
     tone: "navy",
   },
   {
-    name: "ベーシック・テクニック",
-    english: "BASIC TECHNIQUE",
-    target: "junior",
+    name: "小学生",
+    english: "ELEMENTARY",
+    target: "elementary",
     who: "基礎習得・姿勢改善・柔軟性向上",
-    schedule: "月・水・金 17:40 – 18:50",
+    schedule: "",
     style: "非接触",
-    monthly: "◯,◯◯◯円",
     blurb:
       "基本の立ち方、ストレッチ、正確な蹴りのフォーム、基本の型（プムセ）。上達の軸になるクラスで、昇級審査の課題もここで仕上げます。",
     tone: "blood",
   },
   {
-    name: "アクロバット・キック",
-    english: "ACROBATIC KICK",
-    target: "junior",
-    who: "カッコいい蹴りを跳びたい君へ",
-    schedule: "火 17:40 – 18:50",
-    style: "マット使用",
-    monthly: "◯,◯◯◯円",
+    name: "中学生〜高校生",
+    english: "JUNIOR & HIGH",
+    target: "teen",
+    who: "技術の向上と心身の成長",
+    schedule: "",
+    style: "",
     blurb:
-      "540度キックや跳び蹴り、トリッキングなど、テコンドーならではの華麗な足技に特化。基礎クラスと併せて受講するのがおすすめです。",
+      "基礎を固めながら、より高い蹴り技と型（プムセ）の完成度を目指します。部活や勉強と両立しながら、自分のペースで段位を目指せます。",
     tone: "gold",
   },
   {
-    name: "選手育成クラス",
+    name: "アスリート（韓国留学サポート）",
     english: "ATHLETE",
     target: "athlete",
     who: "世界を目指す競技志向の選手に",
-    schedule: "月・水・金 19:00 – 20:10",
+    schedule: "",
     style: "防具着用",
-    monthly: "◯,◯◯◯円",
     blurb:
-      "防具を完全着用したライトコンタクトの対人練習と、競技ルールに基づくトレーニング。国内大会から世界の舞台までを見据えます。指導者の推薦制。",
+      "防具を完全着用したライトコンタクトの対人練習と、競技ルールに基づくトレーニング。国内大会から世界の舞台までを見据え、本場・韓国への留学もサポートします。指導者の推薦制。",
     tone: "navy",
   },
   {
-    name: "カーディオ・テコンドー",
-    english: "CARDIO TAEKWONDO",
+    name: "大人",
+    english: "ADULT",
     target: "adult",
-    who: "お子さまと一緒に、健康づくりとストレス発散",
-    schedule: "火 19:00 – 20:10",
-    style: "非接触",
-    monthly: "◯,◯◯◯円",
+    who: "30代〜60代まで幅広く参加できます",
+    schedule: "火曜日 キョルギコース / 金曜日 プムセコース",
+    style: "プムセ（型）コース中心",
     blurb:
-      "音楽に合わせてステップと蹴りを続ける非接触の有酸素クラス。体幹強化・柔軟性向上に効果的で、対人練習はありません。",
+      "プムセ（型）コース中心で、30代〜60代まで幅広く参加できます。運動経験がなくても、自分のペースで始められます。",
     tone: "blood",
   },
 ]
@@ -106,27 +102,24 @@ const TENETS = [
 
 const PLANS = [
   {
-    name: "ライト",
-    en: "LIGHT",
-    price: "月4回",
-    note: "習い事の掛け持ちや、まずは無理なく始めたい方に。週1回ペースでじっくり。",
-    featured: false,
-  },
-  {
     name: "レギュラー",
     en: "REGULAR",
-    price: "通い放題",
-    note: "スケジュールから好きなクラスを選んで通い放題。上達がいちばん早い主力プラン。",
+    price: "12,000円",
+    unit: "/ 月",
+    note: "回数の上限なく通えるプラン。上達がいちばん早い主力プラン。",
     featured: true,
   },
   {
-    name: "プレミアム",
-    en: "PREMIUM",
-    price: "通い放題＋PT",
-    note: "通い放題に加え、月数回のパーソナル指導つき。選手志向の方に。",
+    name: "月4回まで",
+    en: "4 TIMES / MONTH",
+    price: "10,000円",
+    unit: "/ 月",
+    note: "週1回ペースで通いたい方や、習い事の掛け持ちに。",
     featured: false,
   },
 ]
+
+const PRICE_DISCOUNT_NOTE = "家族、紹介割引があります。お問い合わせ下さい。"
 
 const NEWS = [
   {
@@ -158,11 +151,11 @@ const FAQ = [
   },
   {
     q: "ケガが心配です。組手（対人練習）はありますか？",
-    a: "キッズ・ジュニアクラスは型（プムセ）とミット練習が中心の非接触カリキュラムです。対人練習は選手育成クラスのみで、防具を完全着用したライトコンタクトに限定しています。",
+    a: "幼児・小学生クラスは型（プムセ）とミット練習が中心の非接触カリキュラムです。対人練習は防具を完全着用したライトコンタクトに限定しています。",
   },
   {
     q: "月謝のほかにかかる費用を教えてください。",
-    a: "入会金、年会費（スポーツ保険を含む）、道着代、昇級審査料が別途かかります。防具は選手育成クラスに進む段階で必要になり、それまではレンタルで対応できます。",
+    a: "入会金、年会費（スポーツ保険を含む）、道着代、昇級審査料が別途かかります。防具はアスリートクラスに進む段階で必要になり、それまではレンタルで対応できます。",
   },
   {
     q: "見学や体験はできますか？",
@@ -182,7 +175,7 @@ const FOOTER_COLUMNS: FooterColumn[] = [
   },
   {
     name: "PROGRAM",
-    links: ["キッズ", "ベーシック", "アクロバット", "選手育成", "カーディオ"],
+    links: ["幼児", "小学生", "中学生〜高校生", "アスリート（韓国留学サポート）", "大人"],
   },
   {
     name: "WORLD",
@@ -439,8 +432,8 @@ export default function App() {
           <dl className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/15 border border-white/15">
             {[
               ["出場", "世界テコンドー文化エキスポ"],
-              ["対象", "幼児〜小中学生・大人"],
-              ["クラス", "5クラス / 週6日"],
+              ["対象", "幼児〜高校生・大人"],
+              ["クラス", "5クラス / 火・金"],
               ["体験", "無料・見学のみも可"],
             ].map(([label, value]) => (
               <div key={label} className="bg-black px-4 py-4">
@@ -467,7 +460,7 @@ export default function App() {
             {
               k: "安",
               t: "安全に、段階的に",
-              d: "スポーツ科学に基づいた段階的カリキュラム。基礎の型とミット練習が中心で、防具着用の対人練習は選手クラスのみです。",
+              d: "スポーツ科学に基づいた段階的カリキュラム。基礎の型とミット練習が中心で、対人練習は防具を完全着用したうえで行います。",
             },
             {
               k: "世",
@@ -647,10 +640,11 @@ export default function App() {
                         TARGETS.find((t) => t.id === c.target)?.label ?? "",
                       ],
                       ["ねらい", c.who],
-                      ["実施日時", c.schedule],
+                      ["練習日", c.schedule],
                       ["形式", c.style],
-                      ["月謝", c.monthly],
-                    ].map(([label, value]) => (
+                    ]
+                      .filter(([, value]) => value)
+                      .map(([label, value]) => (
                       <div
                         key={label}
                         className="flex border-b border-black/15 py-2"
@@ -693,7 +687,7 @@ export default function App() {
           </div>
         )}
         <p className="mt-4 text-xs text-black/50">
-          ※ 曜日・時間・月謝はすべて差し替え項目です。確定内容に置き換えます。
+          ※ 練習日は火曜日 キョルギコース / 金曜日 プムセコース。正しいスケジュールはInstagramをご確認ください。
         </p>
       </section>
 
@@ -703,9 +697,9 @@ export default function App() {
           <SectionHead
             en="PRICE"
             ja="料金プラン"
-            lead="通う回数で選ぶ3つのプラン。プラン内であればクラスは自由に組み合わせられます。"
+            lead="通う回数で選べる2つのプラン。プラン内であればクラスは自由に組み合わせられます。"
           />
-          <div className="grid gap-px bg-black/15 border border-black/15 md:grid-cols-3">
+          <div className="grid gap-px bg-black/15 border border-black/15 md:grid-cols-2">
             {PLANS.map((p) => (
               <div
                 key={p.name}
@@ -741,7 +735,7 @@ export default function App() {
                     (p.featured ? "text-gold" : "text-black/50")
                   }
                 >
-                  ◯,◯◯◯円 / 月
+                  {p.unit}
                 </p>
                 <p
                   className={
@@ -754,10 +748,13 @@ export default function App() {
               </div>
             ))}
           </div>
+          <p className="border border-black/15 border-t-0 bg-gold text-black font-bold text-center px-5 py-4">
+            {PRICE_DISCOUNT_NOTE}
+          </p>
           <div className="mt-px border border-black/15 border-t-0 bg-white">
             <dl className="text-sm">
               {[
-                ["入会金", "◯,◯◯◯円（兄弟姉妹は2人目以降◯％割引）"],
+                ["入会金", "◯,◯◯◯円"],
                 ["年会費・保険", "◯,◯◯◯円 / 年（スポーツ保険を含む）"],
                 [
                   "道着・防具",
@@ -777,7 +774,7 @@ export default function App() {
             </dl>
           </div>
           <p className="mt-4 text-xs text-black/50">
-            ※ 金額はすべて差し替え項目です。
+            ※ 入会金・年会費は差し替え項目です。
           </p>
         </div>
       </section>
