@@ -50,6 +50,10 @@ export type Content = {
     title: string
     lead: string
     showFilter: boolean
+    /** 開催曜日の見出し・曜日ごとのコース・注記 */
+    scheduleTitle: string
+    days: { day: string; en: string; course: string; sub: string }[]
+    scheduleNote: string
     note: string
     trialCardTitle: string
     trialCardBody: string
@@ -63,6 +67,8 @@ export type Content = {
       monthly: string
       blurb: string
       image: Img
+      /** 「現在準備中」など。入っていると体験ボタンの代わりに表示する */
+      status: string
     }[]
   }
   price: {

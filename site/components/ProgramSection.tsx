@@ -10,8 +10,11 @@ const TONES = ["navy", "blood", "gold"] as const
 export default function ProgramSection({
   data,
   trialHref = "#trial",
+  igUrl = "",
 }: {
   data: Content["program"]
+  /** 開催曜日の注記からリンクするInstagramのURL */
+  igUrl?: string
   /** 体験ボタンの飛び先（募集欄が公開中なら #recruit） */
   trialHref?: string
 }) {
@@ -30,6 +33,47 @@ export default function ProgramSection({
   return (
     <section id="program" className="mx-auto max-w-[1240px] px-4 py-16">
       <SectionHead en={data.eyebrow} ja={data.title} lead={data.lead} />
+
+      {data.scheduleTitle && data.days.length ? (
+        <div className="mb-10">
+          <div className="flex items-baseline justify-between border-b-2 border-black pb-2 mb-4">
+            <h3 className="font-display text-2xl font-bold tracking-wide">{data.scheduleTitle}</h3>
+            <span className="font-display uppercase text-sm text-black/60">Weekly</span>
+          </div>
+          <div className="grid gap-px bg-black/15 border border-black/15 sm:grid-cols-2">
+            {data.days.map((d, i) => (
+              <div key={d.day + i} className="bg-black text-white flex items-stretch">
+                <div className="bg-gold text-black w-24 sm:w-28 shrink-0 flex flex-col items-center justify-center py-5">
+                  <span className="font-display text-xs tracking-[0.25em]">{d.en}</span>
+                  <span className="font-display text-2xl font-bold leading-none mt-1">
+                    {d.day.replace(/曜日$/, "")}
+                  </span>
+                  <span className="text-[11px] mt-1">曜日</span>
+                </div>
+                <div className="px-5 py-5 flex flex-col justify-center">
+                  <p className="font-display text-2xl md:text-3xl font-bold leading-tight">{d.course}</p>
+                  {d.sub ? <p className="text-sm text-white/60 mt-1">{d.sub}</p> : null}
+                </div>
+              </div>
+            ))}
+          </div>
+          {data.scheduleNote ? (
+            <p className="mt-3 text-sm">
+              <span className="font-bold">※ {data.scheduleNote}</span>
+              {igUrl ? (
+                <a
+                  href={igUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 font-display text-sm border-b border-black hover:text-black/50 transition-colors"
+                >
+                  Instagramを見る →
+                </a>
+              ) : null}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
 
       {data.showFilter && used.length > 1 ? (
         <div className="border border-black">
@@ -90,6 +134,11 @@ export default function ProgramSection({
                   className="aspect-[3/2]"
                   alt={c.name}
                 />
+                {c.status ? (
+                  <span className="absolute top-0 right-0 bg-black text-gold font-display text-xs tracking-wide px-2 py-1">
+                    {c.status}
+                  </span>
+                ) : null}
                 {TARGET_LABELS[c.target] ? (
                   <span className="absolute top-0 left-0 bg-gold text-black font-display uppercase text-xs tracking-wide px-2 py-1">
                     {TARGET_LABELS[c.target].en}
@@ -100,7 +149,7 @@ export default function ProgramSection({
                 <h4 className="font-display text-xl font-bold uppercase leading-none">{c.english}</h4>
                 <p className="text-sm font-bold mt-1.5">{c.name}</p>
                 <p className="text-sm text-black/60 mt-2 leading-relaxed">{c.blurb}</p>
-                <dl className="mt-4 text-sm border-t border-black/15">
+                <dl className="mt-4 mb-5 text-sm border-t border-black/15">
                   {[
                     ["対象", TARGET_LABELS[c.target]?.label ?? c.target],
                     ["ねらい", c.who],
@@ -118,12 +167,20 @@ export default function ProgramSection({
                       </div>
                     ))}
                 </dl>
-                <a
-                  href={trialHref}
-                  className="mt-5 text-center font-display uppercase tracking-wide text-sm px-4 py-2.5 bg-black text-white hover:bg-gold hover:text-black transition-colors duration-150"
-                >
-                  このクラスを体験する
-                </a>
+                {c.status ? (
+                  <p className="mt-auto pt-5">
+                    <span className="block text-center font-display tracking-wide text-sm px-4 py-2.5 border border-black/30 text-black/50">
+                      {c.status}
+                    </span>
+                  </p>
+                ) : (
+                  <a
+                    href={trialHref}
+                    className="mt-auto text-center font-display uppercase tracking-wide text-sm px-4 py-2.5 bg-black text-white hover:bg-gold hover:text-black transition-colors duration-150"
+                  >
+                    このクラスを体験する
+                  </a>
+                )}
               </div>
             </article>
           ))}

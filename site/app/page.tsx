@@ -178,14 +178,19 @@ export default async function Home() {
       ) : null}
 
       {/* クラス一覧 */}
-      {c.program.visible ? <ProgramSection data={c.program} trialHref={trialHref} /> : null}
+      {c.program.visible ? <ProgramSection data={c.program} trialHref={trialHref} igUrl={igUrl} /> : null}
 
       {/* 料金 */}
       {c.price.visible ? (
         <section id="price" className="bg-fog border-y border-black/15">
           <div className="mx-auto max-w-[1240px] px-4 py-16">
             <SectionHead en={c.price.eyebrow} ja={c.price.title} lead={c.price.lead} />
-            <div className="grid gap-px bg-black/15 border border-black/15 md:grid-cols-3">
+            <div
+              className={
+                "grid gap-px bg-black/15 border border-black/15 " +
+                (c.price.plans.length === 2 ? "md:grid-cols-2" : c.price.plans.length === 1 ? "" : "md:grid-cols-3")
+              }
+            >
               {c.price.plans.map((p) => (
                 <div
                   key={p.name}
