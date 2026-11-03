@@ -27,3 +27,6 @@ html {
 
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* 固定ヘッダー（高さ64px）の下に見出しが隠れないようにする */
+section[id] { scroll-margin-top: 4rem; }
